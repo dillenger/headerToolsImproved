@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE dialog SYSTEM "chrome://hdrtoolsimproved/locale/hdrtools.dtd">
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
+<?xml-stylesheet type="text/css" href="chrome://hdrtoolsimproved/content/hdrtools.css"?>
+
+<dialog xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept, cancel, extra1"
+        buttonlabelextra1="&saveRestart;"
+        title="&prefTitle;"
+        id="HTLsettings"
+        onload="onLoad()"
+        ondialogaccept="savePrefs();"
+        style="min-width: 42em; min-height: 27em;">
+
+  <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/settings.js" />
+  <script src="chrome://global/content/globalOverlay.js"/>
+  <script src="chrome://global/content/editMenuOverlay.js"/>
+
+  <groupbox class="settings-groupbox">
+    <hbox class="settings-title">
+      <label class="settings-label">&misc;</label>
+    </hbox>
+
+  <groupbox class="settings-groupbox">
+    <hbox align="center">
+      <checkbox id="delOrig" label="&trashOption;" />
+    </hbox>
+    <hbox align="center">
+      <checkbox id="imapFix" label="&imapFix;" />
+    </hbox>
+    <hbox align="center">
+      <checkbox id="addHTLheader" label="&addHTLheader;" />
+    </hbox>
+  </groupbox>
+
+    <hbox align="center">
+      <label value="&maxchars;" />
+    <html:input type="number" size="8" id="maxFSchars" min="-1" max="999999" style="text-align: start;" />
+    </hbox>
+    <label value="&nolimit;" />
+
+  <spacer height="10px" />
+
+    <hbox class="settings-title">
+      <label class="settings-label">&shortcuts;</label>
+    </hbox>
+    <hbox align="center">
+      <label value="&shortCut; Shift +" />
+      <html:input id="shortcutBox1" size="1" maxlength="1" />
+    </hbox>
+    <hbox align="center">
+      <label value="&shortCutFS; Shift +" />
+      <html:input id="shortcutBox2" size="1" maxlength="1" />
+    </hbox>
+    <spacer height="8px" />
+    <label value="&shortCutWarn;" />
+  </groupbox>
+
+  <spacer height="20px" />
+
+</dialog>

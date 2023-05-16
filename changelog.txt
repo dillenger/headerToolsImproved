@@ -1,0 +1,70 @@
+Changelog for Header Tools Improved
+
+4.0
+Due to changes in Supernova now only works with opened messages.
+Set minimum version to Thunderbird 111.0.
+Set maximum version to Thunderbird 115.0.
+
+3.10
+Changed the font-family for the full source editor to monospace.
+Set maximum version to Thunderbird 110.0.
+
+3.9
+Small CSS fix in the header details dialog.
+Removed some obsolete version checking.
+Set maximum version to Thunderbird 102.*.
+
+3.8
+Added editing of In-Reply-To headers.
+Set minimum version to Thunderbird 91.
+Fixed deleting References headers.
+
+3.7
+Added German locale, thanks to Johannes Kayßer for the translation.
+
+3.6
+UTF-8 encoded Reply-To headers are now decoded, editing is re-enabled.
+
+3.5
+Following the name change chrome and preferences had to be renamed too.
+All HeaderTools Lite preferences are migrated to Header Tools Improved.
+
+3.3
+The original version of Header Tools Lite has been revived.
+To avoid confusion this add-on has been renamed to Header Tools Improved.
+The add-on homepage was also changed, please adjust any shortcuts you may have:
+https://addons.thunderbird.net/en-US/thunderbird/addon/header-tools-improved
+
+3.2
+Fixed context menus for text boxes (input fields).
+
+3.1
+Fixed buggy Change header details dialog.
+Added some fixes for Thunderbird 91.
+
+3.0
+Added support for Thunderbird 78 and beyond.
+Removed support for older versions.
+Added Save and Restart button to the settings dialog.
+Changed shortcut modifiers from Ctrl to Shift.
+
+2.4
+Added empty default shortcut keys.
+
+2.3
+Fixed the shortcut keys, removed obsolete localization.
+Improved handling of References headers.
+
+2.2
+Added Options items to the Context & Message menus.
+Disabled buggy Reply-To header editing, it is read-only now.
+
+2.1
+Tweaked numberbox appearance.
+Added homepage & changelog.
+Tweaked the source editor.
+
+2.0
+First release, legacy WebExtension version of Header Tools Lite.
+Changed the name to HeaderTools Lite.
+Added icon.

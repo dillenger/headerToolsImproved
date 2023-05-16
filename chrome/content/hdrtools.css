@@ -1,0 +1,58 @@
+#cnghdrs {
+  overflow: auto;
+  min-width: 48em;
+  min-height: 22em;
+}
+
+#cnghdrs hbox.stretch {
+  display: flex;
+}
+
+#cnghdrs input {
+  width: 100%;
+}
+
+.tleft {
+  text-align: left;
+  min-width: 8em;
+  margin-block: auto;
+}
+
+#date3 {
+  min-width: 5em;
+  margin-block: 2px;
+}
+
+#sourcePercent {
+  font-weight: bold
+}
+
+#FSeditbox {
+  width: 100%;
+  height: 492px;
+  min-height: 90%;
+  overflow: auto;
+  margin: 0 5px 5px;
+  font-family: monospace;
+  font-size: medium;
+}
+
+#editFSarea {
+  height: 100%;
+  margin-inline-end: 10px;
+}
+
+#HTLsettings,
+#HTLdialog1,
+#HTLdialog2 {
+  padding: 10px;
+}
+
+.settings-groupbox {
+  margin-inline: 4px;
+}
+
+.settings-label {
+  font-weight: bold;
+  margin-block: 10px;
+}

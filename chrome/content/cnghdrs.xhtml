@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE dialog SYSTEM "chrome://hdrtoolsimproved/locale/hdrtools.dtd">
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
+<?xml-stylesheet type="text/css" href="chrome://hdrtoolsimproved/content/hdrtools.css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml"
+        buttons="accept, cancel"
+        onload="HeaderToolsImpObj.initDialog();"
+        title="&extName; - &changeDetails;"
+        orient="vertical"
+        flex="1"
+        id="HTLdialog1"
+        style="min-width: 51em; min-height: 27em; padding: 1em;"
+        persist="screenX screenY width height">
+
+  <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/hdrtools.js" />
+  <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/keysets.js" />
+  <script src="chrome://global/content/globalOverlay.js"/>
+  <script src="chrome://global/content/editMenuOverlay.js"/>
+
+  <vbox id="cnghdrs" flex="1">
+    <hbox align="center" class="stretch">
+      <label value="&subject;" class="tleft" />
+      <html:input id="subBox" size="60" />
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&date;" class="tleft" />
+      <hbox>
+        <menulist id="date3">
+          <menupopup>
+            <menuitem label="" selected="true" />
+            <menuitem label="Mon" />
+            <menuitem label="Tue" />
+            <menuitem label="Wed" />
+            <menuitem label="Thu" />
+            <menuitem label="Fri" />
+            <menuitem label="Sat" />
+            <menuitem label="Sun" />
+          </menupopup>
+        </menulist>
+        <html:input id="dateBox" size="25" />
+      </hbox>
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&author;" class="tleft" />
+      <html:input id="authBox" size="60" />
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&recipients;" class="tleft" />
+      <html:input id="recBox" size="60" />
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&replyto;" class="tleft" />
+      <html:input id="replytoBox" size="60" />
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&mid;" class="tleft" />
+      <html:input id="midBox" size="60" />
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&inreplyto;" class="tleft" />
+      <html:input id="inreplytoBox" size="60" />
+    </hbox>
+    <hbox align="center" class="stretch">
+      <label value="&refs;" class="tleft" />
+      <html:input id="refBox" size="60" />
+    </hbox>
+  </vbox>
+
+</dialog>
+
