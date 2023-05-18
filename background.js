@@ -12,11 +12,11 @@ async function main() {
 
   messenger.WindowListener.registerOptionsPage("chrome://hdrtoolsimproved/content/settings.xhtml");
 
+  messenger.WindowListener.registerWindow("about:3pane", "chrome/content/messenger.js");
+
+  messenger.WindowListener.registerWindow("about:message", "chrome/content/messenger.js");
+
   messenger.WindowListener.registerWindow("chrome://messenger/content/messenger.xhtml", "chrome/content/messenger.js");
-
-  //messenger.WindowListener.registerWindow("chrome://messenger/content/about3Pane.xhtml", "chrome/content/about3Pane.js");
-
-  //messenger.WindowListener.registerWindow("chrome://messenger/content/aboutMessage.xhtml", "chrome/content/aboutMessage.js");
 
   messenger.WindowListener.registerStartupScript("chrome://hdrtoolsimproved/content/migrateprefs.js");
 

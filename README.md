@@ -1,4 +1,4 @@
-# header_tools_improved
+# headerToolsImproved
 
 This extension allows the user to change (edit) messages in any folder.
 

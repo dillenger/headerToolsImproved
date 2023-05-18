@@ -1,13 +1,12 @@
 Changelog for Header Tools Improved
 
 4.0
-Due to changes in Supernova now only works with opened messages.
+Due to Supernova changes in Thunderbird now only works with opened messages.
+The Message list context menu is now hidden when no message is visible.
+The Message menu submenu was removed.
+The font-family for the full source editor was changed to monospace.
 Set minimum version to Thunderbird 111.0.
-Set maximum version to Thunderbird 115.0.
-
-3.10
-Changed the font-family for the full source editor to monospace.
-Set maximum version to Thunderbird 110.0.
+Set maximum version to Thunderbird 115.*.
 
 3.9
 Small CSS fix in the header details dialog.

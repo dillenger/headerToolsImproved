@@ -145,10 +145,12 @@ var HeaderToolsImpObj = {
   // start changing headers details
   edit: function() {
     //var msguri = gFolderDisplay.selectedMessageUris[0];
+    var gTabmail = Services.wm.getMostRecentBrowserWindow().gTabmail;
     var msguri = gTabmail.currentAboutMessage.gMessageURI;
     //var mms = messenger.msgHdrFromURI(msguri).QueryInterface(Components.interfaces.nsIMsgDBHdr);
     var mms = MailServices.messageServiceFromURI(msguri);
     //HeaderToolsImpObj.hdr = mms.messageURIToMsgHdr(msguri);
+    var messenger = Services.wm.getMostRecentBrowserWindow().messenger;
     HeaderToolsImpObj.hdr = messenger.msgHdrFromURI(msguri);
     //HeaderToolsImpObj.folder = HeaderToolsImpObj.hdr.folder;
     HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
@@ -164,10 +166,12 @@ var HeaderToolsImpObj = {
       HeaderToolsImpObj.prefs.setBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning", ! check.value);
     }
     //var msguri = gFolderDisplay.selectedMessageUris[0];
+    var gTabmail = Services.wm.getMostRecentBrowserWindow().gTabmail;
     var msguri = gTabmail.currentAboutMessage.gMessageURI;
     //var mms = messenger.msgHdrFromURI(msguri).QueryInterface(Components.interfaces.nsIMsgDBHdr);
     var mms = MailServices.messageServiceFromURI(msguri);
     //HeaderToolsImpObj.hdr = mms.messageURIToMsgHdr(msguri);
+    var messenger = Services.wm.getMostRecentBrowserWindow().messenger;
     HeaderToolsImpObj.hdr = messenger.msgHdrFromURI(msguri);
     //HeaderToolsImpObj.folder = HeaderToolsImpObj.hdr.folder;
     HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
@@ -455,6 +459,7 @@ var HeaderToolsImpObj = {
       // Moved in copyListener.onStopCopy
       // HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,noTrash,true,null,false);
       var cs = Components.classes["@mozilla.org/messenger/messagecopyservice;1"].getService(Components.interfaces.nsIMsgCopyService);
+      var msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
       cs.copyFileMessage(fileSpec, fol, null, false, flags, keys, HeaderToolsImpObj.copyListener, msgWindow);
     },
 

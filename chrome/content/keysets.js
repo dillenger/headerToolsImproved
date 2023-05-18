@@ -13,9 +13,7 @@ var HeaderToolsImprovedKeys = {
       key1.setAttribute("id", "headerToolsImprovedkey1");
       key1.setAttribute("command", "headerToolsImprovededit");
       document.getElementById("headerToolsImprovedkeyset").appendChild(key1);
-      document.getElementById("headerToolsImprovedModify1").setAttribute("key", "headerToolsImprovedkey1");
-      document.getElementById("headerToolsImprovedModify3").setAttribute("key", "headerToolsImprovedkey1");
-      document.getElementById("headerToolsImprovedModify5").setAttribute("key", "headerToolsImprovedkey1");
+      document.getElementById("headerToolsImprovedModifyHeaders").setAttribute("key", "headerToolsImprovedkey1");
     }
     if (shortcut2) {
       var key2 = document.createXULElement("key");
@@ -24,9 +22,7 @@ var HeaderToolsImprovedKeys = {
       key2.setAttribute("id", "headerToolsImprovedkey2");
       key2.setAttribute("command", "headerToolsImprovededitFS");
       document.getElementById("headerToolsImprovedkeyset").appendChild(key2);
-      document.getElementById("headerToolsImprovedModify2").setAttribute("key", "headerToolsImprovedkey2");
-      document.getElementById("headerToolsImprovedModify4").setAttribute("key", "headerToolsImprovedkey2");
-      document.getElementById("headerToolsImprovedModify6").setAttribute("key", "headerToolsImprovedkey2");
+      document.getElementById("headerToolsImprovedModifySource").setAttribute("key", "headerToolsImprovedkey2");
     }
   }
 };

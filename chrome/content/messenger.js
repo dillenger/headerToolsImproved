@@ -14,80 +14,35 @@ function onLoad(activatedWhileWindowOpen) {
   <commandset id="mailCommands">
     <command id="headerToolsImprovededit"
              oncommand="HeaderToolsImpObj.edit();">
-      <observes element="replyMainMenu"
-                attribute="disabled" />
     </command>
     <command id="headerToolsImprovededitFS"
              oncommand="HeaderToolsImpObj.editFS();">
-      <observes element="replyMainMenu"
-                attribute="disabled" />
     </command>
   </commandset>
 
-  <menupopup id="messageMenuPopup">
-    <menu id="hdrToolsMessageMenu"
-          label="&extName;"
-          insertafter="messageMenuAfterMarkSeparator">
-      <menupopup>
-        <menuitem id="headerToolsImprovedModify1"
-                  label="&changeDetails;"
-                  command="headerToolsImprovededit">
-        </menuitem>
-        <menuitem id="headerToolsImprovedModify2"
-                  label="&fullSource;"
-                  command="headerToolsImprovededitFS">
-        </menuitem>
-        <menuitem id="headerToolsImprovedSettings1"
-                  label="&prefTitle;"
-                  oncommand="HeaderToolsImpObj.showSettings();">
-        </menuitem>
-      </menupopup>
-    </menu>
-    <menuseparator insertafter="hdrToolsMessageMenu" />
-  </menupopup>
-
   <menupopup id="mailContext">
+    <menuseparator id="hdrToolsMailContextSeparator"
+                   insertafter="mailContext-mark" />
     <menu id="hdrToolsMailContextMenu"
           label="&extName;"
-          insertafter="mailContext-mark">
+          insertafter="hdrToolsMailContextSeparator">
+      <observes element="messageBrowser"
+                attribute="hidden" />
       <menupopup>
-        <menuitem id="headerToolsImprovedModify3"
+        <menuitem id="headerToolsImprovedModifyHeaders"
                   label="&changeDetails;"
                   command="headerToolsImprovededit">
         </menuitem>
-        <menuitem id="headerToolsImprovedModify4"
+        <menuitem id="headerToolsImprovedModifySource"
                   label="&fullSource;"
                   command="headerToolsImprovededitFS">
         </menuitem>
-        <menuitem id="headerToolsImprovedSettings2"
+        <menuitem id="headerToolsImprovedSettings"
                   label="&prefTitle;"
                   oncommand="HeaderToolsImpObj.showSettings();">
         </menuitem>
       </menupopup>
     </menu>
-  </menupopup>
-
-  <menupopup id="otherActionsPopup"
-             class="no-icon-menupopup">
-    <menu id="otherActionsContextMenu"
-          label="&extName;"
-          insertafter="otherActionsSeparator">
-      <menupopup>
-        <menuitem id="headerToolsImprovedModify5"
-                  label="&changeDetails;"
-                  command="headerToolsImprovededit">
-        </menuitem>
-        <menuitem id="headerToolsImprovedModify6"
-                  label="&fullSource;"
-                  command="headerToolsImprovededitFS">
-        </menuitem>
-        <menuitem id="headerToolsImprovedSettings3"
-                  label="&prefTitle;"
-                  oncommand="HeaderToolsImpObj.showSettings();">
-        </menuitem>
-      </menupopup>
-    </menu>
-    <menuseparator insertafter="otherActionsContextMenu" />
   </menupopup>
 
 `, ["chrome://hdrtoolsimproved/locale/hdrtools.dtd"]);
