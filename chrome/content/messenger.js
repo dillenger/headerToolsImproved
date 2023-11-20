@@ -20,30 +20,32 @@ function onLoad(activatedWhileWindowOpen) {
     </command>
   </commandset>
 
-  <menupopup id="mailContext">
-    <menuseparator id="hdrToolsMailContextSeparator"
-                   insertafter="mailContext-mark" />
-    <menu id="hdrToolsMailContextMenu"
-          label="&extName;"
-          insertafter="hdrToolsMailContextSeparator">
-      <observes element="messageBrowser"
-                attribute="hidden" />
-      <menupopup>
-        <menuitem id="headerToolsImprovedModifyHeaders"
-                  label="&changeDetails;"
-                  command="headerToolsImprovededit">
-        </menuitem>
-        <menuitem id="headerToolsImprovedModifySource"
-                  label="&fullSource;"
-                  command="headerToolsImprovededitFS">
-        </menuitem>
-        <menuitem id="headerToolsImprovedSettings"
-                  label="&prefTitle;"
-                  oncommand="HeaderToolsImpObj.showSettings();">
-        </menuitem>
-      </menupopup>
-    </menu>
-  </menupopup>
+  <div id="messagePane">
+    <menupopup id="mailContext">
+      <menuseparator id="hdrToolsMailContextSeparator"
+                     insertafter="mailContext-mark" />
+      <menu id="hdrToolsMailContextMenu"
+            label="&extName;"
+            insertafter="hdrToolsMailContextSeparator">
+        <observes element="messageBrowser"
+                  attribute="hidden" />
+        <menupopup>
+          <menuitem id="headerToolsImprovedModifyHeaders"
+                    label="&changeDetails;"
+                    command="headerToolsImprovededit">
+          </menuitem>
+          <menuitem id="headerToolsImprovedModifySource"
+                    label="&fullSource;"
+                    command="headerToolsImprovededitFS">
+          </menuitem>
+          <menuitem id="headerToolsImprovedSettings"
+                    label="&prefTitle;"
+                    oncommand="HeaderToolsImpObj.showSettings();">
+          </menuitem>
+        </menupopup>
+      </menu>
+    </menupopup>
+  </div>
 
 `, ["chrome://hdrtoolsimproved/locale/hdrtools.dtd"]);
   window.HeaderToolsImprovedKeys.initKeyset();

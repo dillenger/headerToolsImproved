@@ -1,5 +1,9 @@
 Changelog for Header Tools Improved
 
+4.1
+Fixed Message-ID duplication on messages from outlook.com.
+Set maximum version to Thunderbird 121.*.
+
 4.0
 Due to Supernova changes in Thunderbird now only works with opened messages.
 The Message list context menu is now hidden when no message is visible.

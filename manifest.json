@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Header Tools Improved",
   "description": "Allows to modify the header and the source of messages.",
-  "version": "4.0",
+  "version": "4.1b1",
   "author": "Dillinger",
   "homepage_url": "https://addons.thunderbird.net/en-US/thunderbird/addon/header-tools-improved/",
   "experiment_apis": {
@@ -22,7 +22,7 @@
     "gecko": {
       "id": "hdrtoolslite@dillinger",
       "strict_min_version": "111.0",
-      "strict_max_version": "118.*"
+      "strict_max_version": "121.*"
     }
   },
   "icons": {

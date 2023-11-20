@@ -16,7 +16,9 @@ async function main() {
 
   messenger.WindowListener.registerWindow("about:message", "chrome/content/messenger.js");
 
-  messenger.WindowListener.registerWindow("chrome://messenger/content/messenger.xhtml", "chrome/content/messenger.js");
+  //messenger.WindowListener.registerWindow("chrome://messenger/content/messenger.xhtml", "chrome/content/messenger.js");
+
+  //messenger.WindowListener.registerWindow("chrome://messenger/content/messageWindow.xhtml", "chrome/content/messenger.js");
 
   messenger.WindowListener.registerStartupScript("chrome://hdrtoolsimproved/content/migrateprefs.js");
 
