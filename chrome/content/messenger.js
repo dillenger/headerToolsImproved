@@ -25,21 +25,21 @@ function onLoad(activatedWhileWindowOpen) {
       <menuseparator id="hdrToolsMailContextSeparator"
                      insertafter="mailContext-mark" />
       <menu id="hdrToolsMailContextMenu"
-            label="&extName;"
+            label="__MSG_extName__"
             insertafter="hdrToolsMailContextSeparator">
         <observes element="messageBrowser"
                   attribute="hidden" />
         <menupopup>
           <menuitem id="headerToolsImprovedModifyHeaders"
-                    label="&changeDetails;"
+                    label="__MSG_changeDetails__"
                     command="headerToolsImprovededit">
           </menuitem>
           <menuitem id="headerToolsImprovedModifySource"
-                    label="&fullSource;"
+                    label="__MSG_fullSource__"
                     command="headerToolsImprovededitFS">
           </menuitem>
           <menuitem id="headerToolsImprovedSettings"
-                    label="&prefTitle;"
+                    label="__MSG_prefTitle__"
                     oncommand="HeaderToolsImpObj.showSettings();">
           </menuitem>
         </menupopup>
@@ -47,7 +47,7 @@ function onLoad(activatedWhileWindowOpen) {
     </menupopup>
   </div>
 
-`, ["chrome://hdrtoolsimproved/locale/hdrtools.dtd"]);
+`);
   window.HeaderToolsImprovedKeys.initKeyset();
   WL.injectCSS("chrome://hdrtoolsimproved/content/hdrtools.css");
 }

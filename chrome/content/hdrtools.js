@@ -3,6 +3,8 @@ It follows the same logic, but the code is totally rewritten, so that in future 
 to maintain it for everyone. Moreover it doesn't affect any Thunderbird native functions and
 so it shouldn't give any compatibility problems.
 */
+const { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+const extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
 
 var HeaderToolsImpObj = {
 
@@ -14,6 +16,7 @@ var HeaderToolsImpObj = {
 
   // called loading dialog for changing headers details
   initDialog : function() {
+    i18n.updateDocument({extension});
     document.addEventListener("dialogaccept", function() {HeaderToolsImpObj.exitDialog(false)}); // This replaces ondialogaccept in XUL.
     document.addEventListener("dialogcancel", function() {HeaderToolsImpObj.exitDialog(true)}); // This replaces ondialogcancel in XUL.
     // window.arguments[0] is an object with date,subject,author and recipients as strings
@@ -52,7 +55,7 @@ var HeaderToolsImpObj = {
 
     /*
     if (! dateValue.match(/^.{3}\,/)) {
-      alert(HeaderToolsImpObj.bundle.GetStringFromName("wrongDate"));
+      alert(extension.localeData.localizeMessage("wrongDate"));
       return false;
     }*/
     window.arguments[0].date = dateValue;
@@ -68,6 +71,7 @@ var HeaderToolsImpObj = {
 
   // called loading dialog for editing full source, that is in window.arguments[0].value
   initDialog2 : function() {
+    i18n.updateDocument({extension});
     document.addEventListener("dialogaccept", function() {HeaderToolsImpObj.exitDialog2(false)}); // This replaces ondialogaccept in XUL.
     document.addEventListener("dialogcancel", function() {HeaderToolsImpObj.exitDialog2(true)}); // This replaces ondialogcancel in XUL.
     document.getElementById("editFSarea").focus();
@@ -95,7 +99,7 @@ var HeaderToolsImpObj = {
   },
 
   showFullSource : function() {
-    if (confirm(HeaderToolsImpObj.bundle.GetStringFromName("fsBigMessage"))) {
+    if (confirm(extension.localeData.localizeMessage("fsBigMessage"))) {
       document.getElementById("editFSarea").setAttribute("limit", "-1");
       document.getElementById("editFSarea").value = "";
       document.getElementById("editFSarea").value = window.arguments[0].value;
@@ -162,7 +166,7 @@ var HeaderToolsImpObj = {
   editFS: function() {
     if (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning")) {
       var check = {value: false};
-      Services.prompt.alertCheck(null,"Header Tools Improved", HeaderToolsImpObj.bundle.GetStringFromName("fsWarning"),HeaderToolsImpObj.bundle.GetStringFromName("dontShowAgain"), check);
+      Services.prompt.alertCheck(null,"Header Tools Improved", extension.localeData.localizeMessage("fsWarning"),extension.localeData.localizeMessage("dontShowAgain"), check);
       HeaderToolsImpObj.prefs.setBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning", ! check.value);
     }
     //var msguri = gFolderDisplay.selectedMessageUris[0];

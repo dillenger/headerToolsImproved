@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE dialog SYSTEM "chrome://hdrtoolsimproved/locale/hdrtools.dtd">
+<!DOCTYPE dialog>
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
 <?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
@@ -7,7 +7,7 @@
 
 <dialog xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         onload="HeaderToolsImpObj.initDialog2();"
-        title="&extName; - &fullSource;"
+        title="__MSG_extName__ - __MSG_fullSource__"
         orient="vertical"
         flex="1"
         id="HTLdialog2"
@@ -16,15 +16,16 @@
 
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/hdrtools.js" />
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/keysets.js" />
+  <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/i18n.js" />
   <script src="chrome://global/content/globalOverlay.js"/>
   <script src="chrome://global/content/editMenuOverlay.js"/>
 
   <hbox align="center">
-    <label value="&mailCharset;" />
+    <label value="__MSG_mailCharset__" />
     <html:input id="charsetBox" type="text" />
     <spacer flex="1" />
-    <button id="FS_button" label="&showComplete;" oncommand="HeaderToolsImpObj.showFullSource()" collapsed="true" />
-    <label id="sourcePercent" value="&percent;" />
+    <button id="FS_button" label="__MSG_showComplete__" oncommand="HeaderToolsImpObj.showFullSource()" collapsed="true" />
+    <label id="sourcePercent" value="__MSG_percent__" />
   </hbox>
   <spacer style="height: 9px" />
   <vbox id="FSeditbox">

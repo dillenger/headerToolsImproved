@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE dialog SYSTEM "chrome://hdrtoolsimproved/locale/hdrtools.dtd">
+<!DOCTYPE dialog>
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
 <?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
@@ -8,7 +8,7 @@
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml"
         buttons="accept, cancel"
         onload="HeaderToolsImpObj.initDialog();"
-        title="&extName; - &changeDetails;"
+        title="__MSG_extName__ - __MSG_changeDetails__"
         orient="vertical"
         flex="1"
         id="HTLdialog1"
@@ -17,16 +17,17 @@
 
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/hdrtools.js" />
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/keysets.js" />
+  <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/i18n.js" />
   <script src="chrome://global/content/globalOverlay.js"/>
   <script src="chrome://global/content/editMenuOverlay.js"/>
 
   <vbox id="cnghdrs" flex="1">
     <hbox align="center" class="stretch">
-      <label value="&subject;" class="tleft" />
+      <label value="__MSG_subject__" class="tleft" />
       <html:input id="subBox" size="60" />
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&date;" class="tleft" />
+      <label value="__MSG_date__" class="tleft" />
       <hbox>
         <menulist id="date3">
           <menupopup>
@@ -44,27 +45,27 @@
       </hbox>
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&author;" class="tleft" />
+      <label value="__MSG_author__" class="tleft" />
       <html:input id="authBox" size="60" />
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&recipients;" class="tleft" />
+      <label value="__MSG_recipients__" class="tleft" />
       <html:input id="recBox" size="60" />
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&replyto;" class="tleft" />
+      <label value="__MSG_replyto__" class="tleft" />
       <html:input id="replytoBox" size="60" />
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&mid;" class="tleft" />
+      <label value="__MSG_mid__" class="tleft" />
       <html:input id="midBox" size="60" />
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&inreplyto;" class="tleft" />
+      <label value="__MSG_inreplyto__" class="tleft" />
       <html:input id="inreplytoBox" size="60" />
     </hbox>
     <hbox align="center" class="stretch">
-      <label value="&refs;" class="tleft" />
+      <label value="__MSG_refs__" class="tleft" />
       <html:input id="refBox" size="60" />
     </hbox>
   </vbox>

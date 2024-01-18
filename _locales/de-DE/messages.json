@@ -1,0 +1,92 @@
+{
+    "addHTLheader": {
+        "message": "Kopfzeile X-HeaderToolsImproved hinzufügen"
+    },
+    "author": {
+        "message": "Absender: "
+    },
+    "changeDetails": {
+        "message": "Kopfzeilen-Details bearbeiten"
+    },
+    "date": {
+        "message": "Datum: "
+    },
+    "dontShowAgain": {
+        "message": "Nicht nochmal anzeigen"
+    },
+    "extName": {
+        "message": "Header Tools Improved"
+    },
+    "fsBigMessage": {
+        "message": "Das Laden des kompletten Nachrichten-Quelltextes könnte sehr lantge dauern.\\nTrotzdem fortfahren?"
+    },
+    "fsWarning": {
+        "message": "Warnung: Bearbeite den Nachrichten-Quelltext nur, wenn Du absolut sicher bist, was Du tust!"
+    },
+    "fullSource": {
+        "message": "Kompletten Quelltext bearbeiten"
+    },
+    "imapFix": {
+        "message": "Änderungen bei IMAP Konten erzwingen"
+    },
+    "inreplyto": {
+        "message": "Als Antwort auf: "
+    },
+    "mailCharset": {
+        "message": "Zeichenkodierung der Nachricht: "
+    },
+    "maxchars": {
+        "message": "Maximale Anzahl der angezeigten Zeichen beim Bearbeiten des Nachrichten-Quelltextes: "
+    },
+    "mid": {
+        "message": "Nachrichten-ID: "
+    },
+    "misc": {
+        "message": "Verschiedenes"
+    },
+    "nolimit": {
+        "message": "(Der Wert -1 bedeutet „keine Begrenzung“)"
+    },
+    "percent": {
+        "message": "Geladen: §%"
+    },
+    "prefTitle": {
+        "message": "Header Tools Improved - Optionen"
+    },
+    "recipients": {
+        "message": "Empfänger: "
+    },
+    "refs": {
+        "message": "Referenzen: "
+    },
+    "replyto": {
+        "message": "Antwort an: "
+    },
+    "saveRestart": {
+        "message": "Speichern und Neustarten"
+    },
+    "shortCut": {
+        "message": "Tastenkürzel um Kopfzeilen-Details zu bearbeiten:"
+    },
+    "shortCutFS": {
+        "message": "Tastenkürzel um den kompletten Nachrichten-Quelltext zu bearbeiten:"
+    },
+    "shortCutWarn": {
+        "message": "Neustart von Thunderbird erforderlich, um Änderungen der Tastenkürzel anzuwenden"
+    },
+    "shortcuts": {
+        "message": "Tastenkürzel"
+    },
+    "showComplete": {
+        "message": "Kompletten Nachrichten-Quelltext anzeigen"
+    },
+    "subject": {
+        "message": "Betreff: "
+    },
+    "trashOption": {
+        "message": "Original-Nachricht in den Papierkorb verschieben"
+    },
+    "wrongDate": {
+        "message": "Ungültiges Datumsformat!"
+    }
+}

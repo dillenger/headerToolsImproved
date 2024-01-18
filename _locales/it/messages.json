@@ -1,0 +1,92 @@
+{
+    "addHTLheader": {
+        "message": "Aggiungere l'intestazione X-HeaderToolsImproved"
+    },
+    "author": {
+        "message": "Mittente: "
+    },
+    "changeDetails": {
+        "message": "Modificare le intestazioni"
+    },
+    "date": {
+        "message": "Data: "
+    },
+    "dontShowAgain": {
+        "message": "Non mostrare di nuovo"
+    },
+    "extName": {
+        "message": "Header Tools Improved"
+    },
+    "fsBigMessage": {
+        "message": "Caricare il sorgente completo di questo messaggio potrebbe richiedere molto tempo.\\nSi vuole continuare?"
+    },
+    "fsWarning": {
+        "message": "ATTENZIONE: modificare il sorgente del messaggio solo se si è\\ntotalmente sicuri di quello che si sta facendo!"
+    },
+    "fullSource": {
+        "message": "Modificare sorgente del messaggio"
+    },
+    "imapFix": {
+        "message": "Forzare la modifiche con gli account IMAP"
+    },
+    "inreplyto": {
+        "message": "In risposta a: "
+    },
+    "mailCharset": {
+        "message": "Codifica del messaggio: "
+    },
+    "maxchars": {
+        "message": "Numero massimo di caratteri da visualizzare quando si modifica il sorgente: "
+    },
+    "mid": {
+        "message": "ID del messaggio: "
+    },
+    "misc": {
+        "message": "Varie"
+    },
+    "nolimit": {
+        "message": "(Il valore -1 significa 'nessun limite')"
+    },
+    "percent": {
+        "message": "Caricato: §%"
+    },
+    "prefTitle": {
+        "message": "Opzioni di Header Tools Improved"
+    },
+    "recipients": {
+        "message": "Destinatari: "
+    },
+    "refs": {
+        "message": "Referenze: "
+    },
+    "replyto": {
+        "message": "Rispondi a: "
+    },
+    "saveRestart": {
+        "message": "Salva e riavvia"
+    },
+    "shortCut": {
+        "message": "Scorciatoia per modificare le intestazioni:"
+    },
+    "shortCutFS": {
+        "message": "Scorciatoia per modificare il sorgente:"
+    },
+    "shortCutWarn": {
+        "message": "Riavviare Thunderbird per applicare le modifiche alle scorciatoie da tastiera"
+    },
+    "shortcuts": {
+        "message": "Scorciatoie da tastiera"
+    },
+    "showComplete": {
+        "message": "Sorgente completo"
+    },
+    "subject": {
+        "message": "Oggetto: "
+    },
+    "trashOption": {
+        "message": "Mettere il messaggio originale nel Cestino"
+    },
+    "wrongDate": {
+        "message": "Formato della data non valido!"
+    }
+}

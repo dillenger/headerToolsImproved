@@ -1,0 +1,92 @@
+{
+    "addHTLheader": {
+        "message": "Add X-HeaderToolsImproved header"
+    },
+    "author": {
+        "message": "Sender: "
+    },
+    "changeDetails": {
+        "message": "Change header details"
+    },
+    "date": {
+        "message": "Date: "
+    },
+    "dontShowAgain": {
+        "message": "Don't show again"
+    },
+    "extName": {
+        "message": "Header Tools Improved"
+    },
+    "fsBigMessage": {
+        "message": "Loading the complete source of this message could take a long time.\nDo you want to continue?"
+    },
+    "fsWarning": {
+        "message": "WARNING: only edit the full source when you're totally sure of what you're doing!"
+    },
+    "fullSource": {
+        "message": "Edit full source"
+    },
+    "imapFix": {
+        "message": "Force changes with IMAP accounts"
+    },
+    "inreplyto": {
+        "message": "In-Reply-To: "
+    },
+    "mailCharset": {
+        "message": "Message charset: "
+    },
+    "maxchars": {
+        "message": "Maximum number of characters to display when editing the full source: "
+    },
+    "mid": {
+        "message": "Message-ID: "
+    },
+    "misc": {
+        "message": "Miscellaneous"
+    },
+    "nolimit": {
+        "message": "(The value of -1 means 'no limit')"
+    },
+    "percent": {
+        "message": "Loaded: §%"
+    },
+    "prefTitle": {
+        "message": "Header Tools Improved - Options"
+    },
+    "recipients": {
+        "message": "Recipients: "
+    },
+    "refs": {
+        "message": "References: "
+    },
+    "replyto": {
+        "message": "Reply-To: "
+    },
+    "saveRestart": {
+        "message": "Save and Restart"
+    },
+    "shortCut": {
+        "message": "Shortcut to change header details:"
+    },
+    "shortCutFS": {
+        "message": "Shortcut to edit full source:"
+    },
+    "shortCutWarn": {
+        "message": "Restart Thunderbird to apply changes to the shortcuts"
+    },
+    "shortcuts": {
+        "message": "Shortcuts"
+    },
+    "showComplete": {
+        "message": "Show complete source"
+    },
+    "subject": {
+        "message": "Subject: "
+    },
+    "trashOption": {
+        "message": "Put original message in Trash folder"
+    },
+    "wrongDate": {
+        "message": "Invalid date format!"
+    }
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE dialog SYSTEM "chrome://hdrtoolsimproved/locale/hdrtools.dtd">
+<!DOCTYPE dialog>
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/global.css"?>
 <?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
@@ -7,55 +7,56 @@
 
 <dialog xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         buttons="accept, cancel, extra1"
-        buttonlabelextra1="&saveRestart;"
-        title="&prefTitle;"
+        buttonlabelextra1="__MSG_saveRestart__"
+        title="__MSG_prefTitle__"
         id="HTLsettings"
         onload="onLoad()"
         ondialogaccept="savePrefs();"
         style="min-width: 42em; min-height: 27em;">
 
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/settings.js" />
+  <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/i18n.js" />
   <script src="chrome://global/content/globalOverlay.js"/>
   <script src="chrome://global/content/editMenuOverlay.js"/>
 
   <groupbox class="settings-groupbox">
     <hbox class="settings-title">
-      <label class="settings-label">&misc;</label>
+      <label class="settings-label" value="__MSG_misc__" />
     </hbox>
 
   <groupbox class="settings-groupbox">
     <hbox align="center">
-      <checkbox id="delOrig" label="&trashOption;" />
+      <checkbox id="delOrig" label="__MSG_trashOption__" />
     </hbox>
     <hbox align="center">
-      <checkbox id="imapFix" label="&imapFix;" />
+      <checkbox id="imapFix" label="__MSG_imapFix__" />
     </hbox>
     <hbox align="center">
-      <checkbox id="addHTLheader" label="&addHTLheader;" />
+      <checkbox id="addHTLheader" label="__MSG_addHTLheader__" />
     </hbox>
   </groupbox>
 
     <hbox align="center">
-      <label value="&maxchars;" />
-    <html:input type="number" size="8" id="maxFSchars" min="-1" max="999999" style="text-align: start;" />
+      <label value="__MSG_maxchars__" />
+    <html:input type="number" size="7" id="maxFSchars" min="-1" max="999999" style="text-align: start;" />
     </hbox>
-    <label value="&nolimit;" />
+    <label value="__MSG_nolimit__" />
 
   <spacer height="10px" />
 
     <hbox class="settings-title">
-      <label class="settings-label">&shortcuts;</label>
+      <label class="settings-label" value="__MSG_shortcuts__" />
     </hbox>
     <hbox align="center">
-      <label value="&shortCut; Shift +" />
+      <label value="__MSG_shortCut__ Shift +" />
       <html:input id="shortcutBox1" size="1" maxlength="1" />
     </hbox>
     <hbox align="center">
-      <label value="&shortCutFS; Shift +" />
+      <label value="__MSG_shortCutFS__ Shift +" />
       <html:input id="shortcutBox2" size="1" maxlength="1" />
     </hbox>
     <spacer height="8px" />
-    <label value="&shortCutWarn;" />
+    <label value="__MSG_shortCutWarn__" />
   </groupbox>
 
   <spacer height="20px" />

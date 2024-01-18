@@ -1,4 +1,6 @@
-const Services = globalThis.Services || ChromeUtils.import("resource://gre/modules/Services.jsm").Services;
+const { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+const extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
+
 const { MailUtils } = ChromeUtils.import("resource:///modules/MailUtils.jsm");
 
 function savePrefs() {
@@ -20,14 +22,15 @@ function savePrefs() {
     Services.prefs.setIntPref("extensions.hdrtoolsimproved.fullsource_maxchars", 50);
 }
 
-function saveAndRestart() {
+function saveRestart() {
   savePrefs();
   MailUtils.restartApplication();
 }
 
 function onLoad() {
+  i18n.updateDocument({extension});
   document.addEventListener("dialogaccept", function () { savePrefs() });
-  document.addEventListener("dialogextra1", function () { saveAndRestart() });
+  document.addEventListener("dialogextra1", function () { saveRestart() });
   document.getElementById("delOrig").checked = Services.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash");
   document.getElementById("imapFix").checked = Services.prefs.getBoolPref("extensions.hdrtoolsimproved.use_imap_fix");
   document.getElementById("addHTLheader").checked = Services.prefs.getBoolPref("extensions.hdrtoolsimproved.add_htl_header");

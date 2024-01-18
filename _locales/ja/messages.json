@@ -1,0 +1,92 @@
+{
+    "addHTLheader": {
+        "message": "X-HeaderToolsImproved ヘッダを追加する"
+    },
+    "author": {
+        "message": "差出人: "
+    },
+    "changeDetails": {
+        "message": "ヘッダ情報の変更"
+    },
+    "date": {
+        "message": "日時: "
+    },
+    "dontShowAgain": {
+        "message": "次回からは表示しない"
+    },
+    "extName": {
+        "message": "Header Tools Improved"
+    },
+    "fsBigMessage": {
+        "message": "このメッセージを完全に読み込むのには時間がかかります。\\nこのまま続けてもよろしいですか？"
+    },
+    "fsWarning": {
+        "message": "警告: 何をおこなうかを理解している場合のみ、ソース編集をしてください！"
+    },
+    "fullSource": {
+        "message": "ソース編集"
+    },
+    "imapFix": {
+        "message": "強制的に IMAP アカウントに変更する "
+    },
+    "inreplyto": {
+        "message": "In-Reply-To: "
+    },
+    "mailCharset": {
+        "message": "メッセージ文字コード: "
+    },
+    "maxchars": {
+        "message": "ソース編集時の最大表示文字数:"
+    },
+    "mid": {
+        "message": "Message-ID: "
+    },
+    "misc": {
+        "message": "その他"
+    },
+    "nolimit": {
+        "message": "(-1 が無制限値になります) "
+    },
+    "percent": {
+        "message": "読み込み: §%"
+    },
+    "prefTitle": {
+        "message": "Header Tools Improved 設定"
+    },
+    "recipients": {
+        "message": "受取人: "
+    },
+    "refs": {
+        "message": "References: "
+    },
+    "replyto": {
+        "message": "返信先: "
+    },
+    "saveRestart": {
+        "message": "保存して再起動します"
+    },
+    "shortCut": {
+        "message": "ヘッダ情報の編集ショートカット:"
+    },
+    "shortCutFS": {
+        "message": "ソース編集ショートカット:"
+    },
+    "shortCutWarn": {
+        "message": "ショートカットを有効にするためには Thunderbird の再起動が必要です"
+    },
+    "shortcuts": {
+        "message": "ショートカット"
+    },
+    "showComplete": {
+        "message": "ソースをすべて表示"
+    },
+    "subject": {
+        "message": "件名: "
+    },
+    "trashOption": {
+        "message": "オリジナルのメッセージをごみ箱に入れる"
+    },
+    "wrongDate": {
+        "message": "日付表示形式が無効です！"
+    }
+}

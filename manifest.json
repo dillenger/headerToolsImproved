@@ -2,9 +2,10 @@
   "manifest_version": 2,
   "name": "Header Tools Improved",
   "description": "Allows to modify the header and the source of messages.",
-  "version": "4.1",
+  "version": "4.2",
   "author": "Dillinger",
   "homepage_url": "https://addons.thunderbird.net/en-US/thunderbird/addon/header-tools-improved/",
+  "default_locale": "en-US",
   "experiment_apis": {
     "WindowListener": {
       "schema": "chrome/content/api/WindowListener/schema.json",
