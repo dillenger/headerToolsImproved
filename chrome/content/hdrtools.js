@@ -361,8 +361,16 @@ var HeaderToolsImpObj = {
         }
 
         if (headers.indexOf("\nMessage-ID:") > -1) {
-          headers = headers.replace(/\nMessage-ID:\r\n/, "\nMessage-ID:"); // outlook.com duplication fix
+          headers = headers.replace(/\nMessage-ID:\r\n/, "\nMessage-ID:"); // newline fix
           headers = headers.replace(/\nMessage-ID: *.*\r\n/, "\nMessage-ID: "+newHdr.mid+"\r\n");
+        }
+        else if (headers.indexOf("\nMessage-Id:") > -1) {
+          headers = headers.replace(/\nMessage-Id:\r\n/, "\nMessage-Id:"); // newline fix
+          headers = headers.replace(/\nMessage-Id: *.*\r\n/, "\nMessage-Id: "+newHdr.mid+"\r\n");
+        }
+        else if (headers.indexOf("\nMessage-id:") > -1) {
+          headers = headers.replace(/\nMessage-id:\r\n/, "\nMessage-id:"); // newline fix
+          headers = headers.replace(/\nMessage-id: *.*\r\n/, "\nMessage-id: "+newHdr.mid+"\r\n");
         }
         else if (newHdr.mid) { // header missing
           var newMid = (newHdr.mid.substring(0,1) == "<") ? newHdr.mid : "<"+newHdr.mid+">";
