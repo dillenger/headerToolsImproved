@@ -3,6 +3,7 @@ Changelog for Header Tools Improved
 4.2
 Switched to the WebExtension i18n locale system.
 Added Dutch locale.
+Fixed Message-Id & Message-id case detection.
 
 4.1
 Fixed Message-ID duplication on messages from outlook.com.
