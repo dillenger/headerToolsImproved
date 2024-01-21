@@ -328,35 +328,39 @@ var HeaderToolsImpObj = {
         else if (headers.indexOf("\nsubject:") > -1)
           headers = headers.replace(/\nsubject: *.*\r\n/, "\nsubject: "+newSubEnc+"\r\n");
         else // header missing
-          headers = headers+("Subject: "+newSubEnc+"\r\n");
+          //headers = headers+("Subject: "+newSubEnc+"\r\n");
+          console.debug("Subject: missing");
 
         if (headers.indexOf("\nDate:") > -1)
           headers = headers.replace(/\nDate: *.*\r\n/, "\nDate: "+newHdr.date+"\r\n");
         else if (headers.indexOf("\ndate:") > -1)
           headers = headers.replace(/\ndate: *.*\r\n/, "\ndate: "+newHdr.date+"\r\n");
         else // header missing
-          headers = headers+("Date: "+newHdr.date+"\r\n");
+          //headers = headers+("Date: "+newHdr.date+"\r\n");
+          console.debug("Date: missing");
 
         if (headers.indexOf("\nFrom:") > -1)
           headers = headers.replace(/\nFrom: *.*\r\n/, "\nFrom: "+newAuthEnc+"\r\n");
         else if (headers.indexOf("\nfrom:") > -1)
           headers = headers.replace(/\nfrom: *.*\r\n/, "\nfrom: "+newAuthEnc+"\r\n");
         else // header missing
-          headers = headers+("From: "+newAuthEnc+"\r\n");
+          //headers = headers+("From: "+newAuthEnc+"\r\n");
+          console.debug("From: missing");
 
         if (headers.indexOf("\nTo:") > -1)
           headers = headers.replace(/\nTo: *.*\r\n/, "\nTo: "+newRecEnc+"\r\n");
         else if (headers.indexOf("\nto:") > -1)
           headers = headers.replace(/\nto: *.*\r\n/, "\nto: "+newRecEnc+"\r\n");
         else // header missing
-          headers = headers+("To: "+newRecEnc+"\r\n");
+          //headers = headers+("To: "+newRecEnc+"\r\n");
+          console.debug("To: missing");
 
         if (headers.indexOf("\nReply-To:") > -1)
           headers = headers.replace(/\nReply-To: *.*\r\n/, "\nReply-To: "+newReplytoEnc+"\r\n");
         else if (headers.indexOf("\nreply-to:") > -1)
           headers = headers.replace(/\nreply-to: *.*\r\n/, "\nreply-to: "+newReplytoEnc+"\r\n");
         else { // header missing
-          headers = headers+("Reply-To: "+newReplytoEnc+"\r\n");
+          //headers = headers+("Reply-To: "+newReplytoEnc+"\r\n");
           console.debug("Reply-To: missing");
         }
 
@@ -387,7 +391,7 @@ var HeaderToolsImpObj = {
         else if (headers.indexOf("\nin-reply-to:") > -1)
           headers = headers.replace(/\nin-reply-to: *.*\r\n/, "\nin-reply-to: "+newHdr.inreplyto+"\r\n");
         else { // header missing
-          headers = headers+("In-Reply-To: "+newHdr.inreplyto+"\r\n");
+          //headers = headers+("In-Reply-To: "+newHdr.inreplyto+"\r\n");
           console.debug("In-Reply-To: missing");
         }
 
@@ -396,7 +400,7 @@ var HeaderToolsImpObj = {
         else if (headers.indexOf("\nreferences:") > -1)
           headers = headers.replace(/\nreferences: *.*\r\n/, "\nreferences: "+newHdr.ref+"\r\n");
         else { // header missing
-          headers = headers+("References: "+newHdr.ref+"\r\n");
+          //headers = headers+("References: "+newHdr.ref+"\r\n");
           console.debug("References: missing");
         }
 

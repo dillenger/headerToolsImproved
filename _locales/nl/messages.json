@@ -33,10 +33,10 @@
         "message": "Als antwoord op: "
     },
     "mailCharset": {
-        "message": "Karakterset: "
+        "message": "Tekenset: "
     },
     "maxchars": {
-        "message": "Maximum aantal zichtbare karakters bij het bewerken van de volledige bron: "
+        "message": "Maximum aantal tekens bij het bewerken van de bron: "
     },
     "mid": {
         "message": "Bericht-ID: "
