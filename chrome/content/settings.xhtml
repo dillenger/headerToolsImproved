@@ -6,13 +6,12 @@
 <?xml-stylesheet type="text/css" href="chrome://hdrtoolsimproved/content/hdrtools.css"?>
 
 <dialog xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-        buttons="accept, cancel, extra1"
-        buttonlabelextra1="__MSG_saveRestart__"
+        buttons="accept, cancel"
         title="__MSG_prefTitle__"
         id="HTLsettings"
         onload="onLoad()"
         ondialogaccept="savePrefs();"
-        style="min-width: 42em; min-height: 27em;">
+        style="min-width: 55em; min-height: 29em;">
 
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/i18n.js" />
   <script type="application/x-javascript" src="chrome://hdrtoolsimproved/content/settings.js" />
@@ -24,29 +23,28 @@
       <label class="settings-label" value="__MSG_misc__" />
     </hbox>
 
-  <groupbox class="settings-groupbox">
-    <hbox align="center">
-      <checkbox id="delOrig" label="__MSG_trashOption__" />
-    </hbox>
-    <hbox align="center">
-      <checkbox id="imapFix" label="__MSG_imapFix__" />
-    </hbox>
-    <hbox align="center">
-      <checkbox id="addHTLheader" label="__MSG_addHTLheader__" />
-    </hbox>
-  </groupbox>
+    <groupbox class="settings-groupbox">
+      <hbox align="center">
+        <checkbox id="delOrig" label="__MSG_trashOption__" />
+      </hbox>
+      <hbox align="center">
+        <checkbox id="imapFix" label="__MSG_imapFix__" />
+      </hbox>
+      <hbox align="center">
+        <checkbox id="addHTLheader" label="__MSG_addHTLheader__" />
+      </hbox>
+    </groupbox>
 
     <hbox align="center">
       <label value="__MSG_maxchars__" />
-    <html:input type="number" size="7" id="maxFSchars" min="-1" max="999999" style="text-align: start;" />
+      <html:input type="number" size="7" id="maxFSchars" min="-1" max="999999" style="text-align: start;" />
     </hbox>
     <label value="__MSG_nolimit__" />
 
-  <spacer height="10px" />
-
-    <hbox class="settings-title">
+    <hbox class="settings-title" style="margin-top: 20px;" >
       <label class="settings-label" value="__MSG_shortcuts__" />
     </hbox>
+
     <hbox align="center">
       <label value="__MSG_shortCut__ Shift +" />
       <html:input id="shortcutBox1" size="1" maxlength="1" />
@@ -56,9 +54,10 @@
       <html:input id="shortcutBox2" size="1" maxlength="1" />
     </hbox>
     <spacer height="8px" />
-    <label value="__MSG_shortCutWarn__" />
+    <hbox align="center">
+      <label value="__MSG_shortCutWarn__" />
+      <button label="__MSG_saveRestart__" oncommand="saveRestart()" style="appearance: auto; margin-inline-start: auto; margin-inline-end: 1px;" />
+    </hbox>
   </groupbox>
-
-  <spacer height="20px" />
 
 </dialog>

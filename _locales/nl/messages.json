@@ -1,0 +1,92 @@
+{
+    "addHTLheader": {
+        "message": "Voeg X-HeaderToolsImproved koptekst toe"
+    },
+    "author": {
+        "message": "Verzender: "
+    },
+    "changeDetails": {
+        "message": "Bewerk kopteksten"
+    },
+    "date": {
+        "message": "Datum: "
+    },
+    "dontShowAgain": {
+        "message": "Laat deze waarschuwing niet meer zien"
+    },
+    "extName": {
+        "message": "Header Tools Improved"
+    },
+    "fsBigMessage": {
+        "message": "Het laden van de volledige bron van dit bericht kan lang duren.\nWilt U doorgaan?"
+    },
+    "fsWarning": {
+        "message": "WAARSCHUWING: bewerk de volledige bron alleen wanneer U zeker weet wat U doet!"
+    },
+    "fullSource": {
+        "message": "Bewerk de volledige bron"
+    },
+    "imapFix": {
+        "message": "Forceer aanpassingen bij IMAP accounts"
+    },
+    "inreplyto": {
+        "message": "Als antwoord op: "
+    },
+    "mailCharset": {
+        "message": "Karakterset: "
+    },
+    "maxchars": {
+        "message": "Maximum aantal zichtbare karakters bij het bewerken van de volledige bron: "
+    },
+    "mid": {
+        "message": "Bericht-ID: "
+    },
+    "misc": {
+        "message": "Diversen"
+    },
+    "nolimit": {
+        "message": "(De waarde -1 betekent 'geen limiet')"
+    },
+    "percent": {
+        "message": "Geladen: §%"
+    },
+    "prefTitle": {
+        "message": "Header Tools Improved - Opties"
+    },
+    "recipients": {
+        "message": "Ontvangers: "
+    },
+    "refs": {
+        "message": "Referenties: "
+    },
+    "replyto": {
+        "message": "Antwoord naar: "
+    },
+    "saveRestart": {
+        "message": "Opslaan en herstarten"
+    },
+    "shortCut": {
+        "message": "Snelkoppeling naar het bewerken van kopteksten:"
+    },
+    "shortCutFS": {
+        "message": "Snelkoppeling naar het bewerken van de volledige bron:"
+    },
+    "shortCutWarn": {
+        "message": "Herstart Thunderbird om veranderingen aan de snelkoppelingen op te slaan"
+    },
+    "shortcuts": {
+        "message": "Snelkoppelingen"
+    },
+    "showComplete": {
+        "message": "Laat de volledige bron zien"
+    },
+    "subject": {
+        "message": "Onderwerp: "
+    },
+    "trashOption": {
+        "message": "Verplaats het originele bericht naar de prullenbak"
+    },
+    "wrongDate": {
+        "message": "Ongeldig datumformaat!"
+    }
+}

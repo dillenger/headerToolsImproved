@@ -3,11 +3,7 @@ async function main() {
   messenger.WindowListener.registerDefaultPrefs("defaults/preferences/defaults.js");
 
   messenger.WindowListener.registerChromeUrl([
-    ["content", "hdrtoolsimproved", "chrome/content/"],
-    ["locale", "hdrtoolsimproved", "en-US", "chrome/locale/en-US/"],
-    ["locale", "hdrtoolsimproved", "de-DE", "chrome/locale/de-DE/"],
-    ["locale", "hdrtoolsimproved", "it", "chrome/locale/it/"],
-    ["locale", "hdrtoolsimproved", "ja", "chrome/locale/ja/"]
+    ["content", "hdrtoolsimproved", "chrome/content/"]
   ]);
 
   messenger.WindowListener.registerOptionsPage("chrome://hdrtoolsimproved/content/settings.xhtml");

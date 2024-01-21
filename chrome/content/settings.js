@@ -1,7 +1,7 @@
-const { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
-const extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
-
 const { MailUtils } = ChromeUtils.import("resource:///modules/MailUtils.jsm");
+
+var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
 
 function savePrefs() {
   Services.prefs.setBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash", document.getElementById("delOrig").checked);

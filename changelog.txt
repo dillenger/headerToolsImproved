@@ -1,5 +1,9 @@
 Changelog for Header Tools Improved
 
+4.2
+Switched to the WebExtension i18n locale system.
+Added Dutch locale.
+
 4.1
 Fixed Message-ID duplication on messages from outlook.com.
 Set maximum version to Thunderbird 123.*.

@@ -3,8 +3,6 @@ It follows the same logic, but the code is totally rewritten, so that in future 
 to maintain it for everyone. Moreover it doesn't affect any Thunderbird native functions and
 so it shouldn't give any compatibility problems.
 */
-const { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
-const extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
 
 var HeaderToolsImpObj = {
 
@@ -16,6 +14,8 @@ var HeaderToolsImpObj = {
 
   // called loading dialog for changing headers details
   initDialog : function() {
+    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     i18n.updateDocument({extension});
     document.addEventListener("dialogaccept", function() {HeaderToolsImpObj.exitDialog(false)}); // This replaces ondialogaccept in XUL.
     document.addEventListener("dialogcancel", function() {HeaderToolsImpObj.exitDialog(true)}); // This replaces ondialogcancel in XUL.
@@ -71,6 +71,8 @@ var HeaderToolsImpObj = {
 
   // called loading dialog for editing full source, that is in window.arguments[0].value
   initDialog2 : function() {
+    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     i18n.updateDocument({extension});
     document.addEventListener("dialogaccept", function() {HeaderToolsImpObj.exitDialog2(false)}); // This replaces ondialogaccept in XUL.
     document.addEventListener("dialogcancel", function() {HeaderToolsImpObj.exitDialog2(true)}); // This replaces ondialogcancel in XUL.
