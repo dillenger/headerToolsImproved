@@ -101,6 +101,8 @@ var HeaderToolsImpObj = {
   },
 
   showFullSource : function() {
+    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     if (confirm(extension.localeData.localizeMessage("fsBigMessage"))) {
       document.getElementById("editFSarea").setAttribute("limit", "-1");
       document.getElementById("editFSarea").value = "";
