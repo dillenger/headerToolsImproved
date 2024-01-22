@@ -322,38 +322,48 @@ var HeaderToolsImpObj = {
         // This will be removed after the if-else_if-else series, it will make easier to test headers
         headers = "\n"+headers+"\r\n";
 
+        // fix missing <brackets> for RSS authors
+        if (headers.indexOf("\nContent-Base:") > -1) {
+          console.debug("RSS author fixed");
+          newAuthEnc = "<"+newAuthEnc+">";
+        }
+
         // check also lowercase headers, used for example by SOGO
         if (headers.indexOf("\nSubject:") > -1)
           headers = headers.replace(/\nSubject: *.*\r\n/, "\nSubject: "+newSubEnc+"\r\n");
         else if (headers.indexOf("\nsubject:") > -1)
           headers = headers.replace(/\nsubject: *.*\r\n/, "\nsubject: "+newSubEnc+"\r\n");
-        else // header missing
+        else { // header missing
           //headers = headers+("Subject: "+newSubEnc+"\r\n");
           console.debug("Subject: missing");
+        }
 
         if (headers.indexOf("\nDate:") > -1)
           headers = headers.replace(/\nDate: *.*\r\n/, "\nDate: "+newHdr.date+"\r\n");
         else if (headers.indexOf("\ndate:") > -1)
           headers = headers.replace(/\ndate: *.*\r\n/, "\ndate: "+newHdr.date+"\r\n");
-        else // header missing
+        else { // header missing
           //headers = headers+("Date: "+newHdr.date+"\r\n");
           console.debug("Date: missing");
+        }
 
         if (headers.indexOf("\nFrom:") > -1)
           headers = headers.replace(/\nFrom: *.*\r\n/, "\nFrom: "+newAuthEnc+"\r\n");
         else if (headers.indexOf("\nfrom:") > -1)
           headers = headers.replace(/\nfrom: *.*\r\n/, "\nfrom: "+newAuthEnc+"\r\n");
-        else // header missing
+        else { // header missing
           //headers = headers+("From: "+newAuthEnc+"\r\n");
           console.debug("From: missing");
+        }
 
         if (headers.indexOf("\nTo:") > -1)
           headers = headers.replace(/\nTo: *.*\r\n/, "\nTo: "+newRecEnc+"\r\n");
         else if (headers.indexOf("\nto:") > -1)
           headers = headers.replace(/\nto: *.*\r\n/, "\nto: "+newRecEnc+"\r\n");
-        else // header missing
+        else { // header missing
           //headers = headers+("To: "+newRecEnc+"\r\n");
           console.debug("To: missing");
+        }
 
         if (headers.indexOf("\nReply-To:") > -1)
           headers = headers.replace(/\nReply-To: *.*\r\n/, "\nReply-To: "+newReplytoEnc+"\r\n");
