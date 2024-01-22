@@ -425,12 +425,6 @@ var HeaderToolsImpObj = {
         var action = "headerChanged";
       }
 
-      // strips off some useless headers
-      data = data.replace(/^From - .+\r\n/, "");
-      data = data.replace(/X-Mozilla-Status.+\r\n/, "");
-      data = data.replace(/X-Mozilla-Status2.+\r\n/, "");
-      data = data.replace(/X-Mozilla-Keys.+\r\n/, "");
-
       if (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.add_htl_header")) {
         var now = new Date;
         var HTLhead = "X-HeaderToolsImproved: "+action+" - "+now.toString();
