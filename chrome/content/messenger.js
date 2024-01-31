@@ -20,32 +20,30 @@ function onLoad(activatedWhileWindowOpen) {
     </command>
   </commandset>
 
-  <div id="messagePane">
-    <menupopup id="mailContext">
-      <menuseparator id="hdrToolsMailContextSeparator"
-                     insertafter="mailContext-mark" />
-      <menu id="hdrToolsMailContextMenu"
-            label="__MSG_extName__"
-            insertafter="hdrToolsMailContextSeparator">
-        <observes element="messageBrowser"
-                  attribute="hidden" />
-        <menupopup>
-          <menuitem id="headerToolsImprovedModifyHeaders"
-                    label="__MSG_changeDetails__"
-                    command="headerToolsImprovededit">
-          </menuitem>
-          <menuitem id="headerToolsImprovedModifySource"
-                    label="__MSG_fullSource__"
-                    command="headerToolsImprovededitFS">
-          </menuitem>
-          <menuitem id="headerToolsImprovedSettings"
-                    label="__MSG_prefTitle__"
-                    oncommand="HeaderToolsImpObj.showSettings();">
-          </menuitem>
-        </menupopup>
-      </menu>
-    </menupopup>
-  </div>
+  <menupopup id="mailContext">
+    <menuseparator id="hdrToolsMailContextSeparator"
+                   insertafter="mailContext-mark" />
+    <menu id="hdrToolsMailContextMenu"
+          label="__MSG_extName__"
+          insertafter="hdrToolsMailContextSeparator">
+      <observes element="messageBrowser"
+                attribute="hidden" />
+      <menupopup>
+        <menuitem id="headerToolsImprovedModifyHeaders"
+                  label="__MSG_changeDetails__"
+                  command="headerToolsImprovededit">
+        </menuitem>
+        <menuitem id="headerToolsImprovedModifySource"
+                  label="__MSG_fullSource__"
+                  command="headerToolsImprovededitFS">
+        </menuitem>
+        <menuitem id="headerToolsImprovedSettings"
+                  label="__MSG_prefTitle__"
+                  oncommand="HeaderToolsImpObj.showSettings();">
+        </menuitem>
+      </menupopup>
+    </menu>
+  </menupopup>
 
 `);
   window.HeaderToolsImprovedKeys.initKeyset();
