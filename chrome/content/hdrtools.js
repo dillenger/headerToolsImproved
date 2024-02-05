@@ -335,7 +335,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nsubject: *.*\r\n/, "\nsubject: "+newSubEnc+"\r\n");
         else { // header missing
           //headers = headers+("Subject: "+newSubEnc+"\r\n");
-          console.debug("Subject: missing");
         }
 
         if (headers.indexOf("\nDate:") > -1)
@@ -344,7 +343,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\ndate: *.*\r\n/, "\ndate: "+newHdr.date+"\r\n");
         else { // header missing
           //headers = headers+("Date: "+newHdr.date+"\r\n");
-          console.debug("Date: missing");
         }
 
         if (headers.indexOf("\nFrom:") > -1)
@@ -353,7 +351,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nfrom: *.*\r\n/, "\nfrom: "+newAuthEnc+"\r\n");
         else { // header missing
           //headers = headers+("From: "+newAuthEnc+"\r\n");
-          console.debug("From: missing");
         }
 
         if (headers.indexOf("\nTo:") > -1)
@@ -362,7 +359,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nto: *.*\r\n/, "\nto: "+newRecEnc+"\r\n");
         else { // header missing
           //headers = headers+("To: "+newRecEnc+"\r\n");
-          console.debug("To: missing");
         }
 
         if (headers.indexOf("\nReply-To:") > -1)
@@ -371,7 +367,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nreply-to: *.*\r\n/, "\nreply-to: "+newReplytoEnc+"\r\n");
         else { // header missing
           //headers = headers+("Reply-To: "+newReplytoEnc+"\r\n");
-          console.debug("Reply-To: missing");
         }
 
         if (headers.indexOf("\nMessage-ID:") > -1) {
@@ -402,7 +397,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nin-reply-to: *.*\r\n/, "\nin-reply-to: "+newHdr.inreplyto+"\r\n");
         else { // header missing
           //headers = headers+("In-Reply-To: "+newHdr.inreplyto+"\r\n");
-          console.debug("In-Reply-To: missing");
         }
 
         if (headers.indexOf("\nReferences:") > -1)
@@ -411,7 +405,6 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nreferences: *.*\r\n/, "\nreferences: "+newHdr.ref+"\r\n");
         else { // header missing
           //headers = headers+("References: "+newHdr.ref+"\r\n");
-          console.debug("References: missing");
         }
 
         if (newHdr.ref === "") { // header removed
