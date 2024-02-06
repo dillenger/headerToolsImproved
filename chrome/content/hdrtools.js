@@ -333,41 +333,36 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nSubject: *.*\r\n/, "\nSubject: "+newSubEnc+"\r\n");
         else if (headers.indexOf("\nsubject:") > -1)
           headers = headers.replace(/\nsubject: *.*\r\n/, "\nsubject: "+newSubEnc+"\r\n");
-        else { // header missing
-          //headers = headers+("Subject: "+newSubEnc+"\r\n");
-        }
+        else // header missing
+          headers = headers+("Subject: "+newSubEnc+"\r\n");
 
         if (headers.indexOf("\nDate:") > -1)
           headers = headers.replace(/\nDate: *.*\r\n/, "\nDate: "+newHdr.date+"\r\n");
         else if (headers.indexOf("\ndate:") > -1)
           headers = headers.replace(/\ndate: *.*\r\n/, "\ndate: "+newHdr.date+"\r\n");
-        else { // header missing
-          //headers = headers+("Date: "+newHdr.date+"\r\n");
-        }
+        else // header missing
+          headers = headers+("Date: "+newHdr.date+"\r\n");
 
         if (headers.indexOf("\nFrom:") > -1)
           headers = headers.replace(/\nFrom: *.*\r\n/, "\nFrom: "+newAuthEnc+"\r\n");
         else if (headers.indexOf("\nfrom:") > -1)
           headers = headers.replace(/\nfrom: *.*\r\n/, "\nfrom: "+newAuthEnc+"\r\n");
-        else { // header missing
-          //headers = headers+("From: "+newAuthEnc+"\r\n");
-        }
+        else // header missing
+          headers = headers+("From: "+newAuthEnc+"\r\n");
 
         if (headers.indexOf("\nTo:") > -1)
           headers = headers.replace(/\nTo: *.*\r\n/, "\nTo: "+newRecEnc+"\r\n");
         else if (headers.indexOf("\nto:") > -1)
           headers = headers.replace(/\nto: *.*\r\n/, "\nto: "+newRecEnc+"\r\n");
-        else { // header missing
-          //headers = headers+("To: "+newRecEnc+"\r\n");
-        }
+        else // header missing
+          headers = headers+("To: "+newRecEnc+"\r\n");
 
         if (headers.indexOf("\nReply-To:") > -1)
           headers = headers.replace(/\nReply-To: *.*\r\n/, "\nReply-To: "+newReplytoEnc+"\r\n");
         else if (headers.indexOf("\nreply-to:") > -1)
           headers = headers.replace(/\nreply-to: *.*\r\n/, "\nreply-to: "+newReplytoEnc+"\r\n");
-        else { // header missing
-          //headers = headers+("Reply-To: "+newReplytoEnc+"\r\n");
-        }
+        else // header missing
+          headers = headers+("Reply-To: "+newReplytoEnc+"\r\n");
 
         if (headers.indexOf("\nMessage-ID:") > -1) {
           headers = headers.replace(/\nMessage-ID:\r\n/, "\nMessage-ID:"); // newline fix
@@ -395,17 +390,15 @@ var HeaderToolsImpObj = {
           headers = headers.replace(/\nIn-Reply-To: *.*\r\n/, "\nIn-Reply-To: "+newHdr.inreplyto+"\r\n");
         else if (headers.indexOf("\nin-reply-to:") > -1)
           headers = headers.replace(/\nin-reply-to: *.*\r\n/, "\nin-reply-to: "+newHdr.inreplyto+"\r\n");
-        else { // header missing
-          //headers = headers+("In-Reply-To: "+newHdr.inreplyto+"\r\n");
-        }
+        else // header missing
+          headers = headers+("In-Reply-To: "+newHdr.inreplyto+"\r\n");
 
         if (headers.indexOf("\nReferences:") > -1)
           headers = headers.replace(/\nReferences: *.*\r\n/, "\nReferences: "+newHdr.ref+"\r\n");
         else if (headers.indexOf("\nreferences:") > -1)
           headers = headers.replace(/\nreferences: *.*\r\n/, "\nreferences: "+newHdr.ref+"\r\n");
-        else { // header missing
-          //headers = headers+("References: "+newHdr.ref+"\r\n");
-        }
+        else // header missing
+          headers = headers+("References: "+newHdr.ref+"\r\n");
 
         if (newHdr.ref === "") { // header removed
           headers = headers.replace(/\nIn-Reply-To: *.*\r\n/, "\nIn-Reply-To: \r\n");
