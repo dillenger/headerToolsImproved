@@ -3,8 +3,8 @@ Changelog for Header Tools Improved
 4.2
 Switched to the WebExtension i18n locale system.
 Added Dutch locale.
-Fixed Message-Id & Message-id case detection.
-Stopped empty header generation for missing headers.
+Improved header case detection (ID/Id/id).
+Set maximum version to Thunderbird 124.*.
 
 4.1
 Fixed Message-ID duplication on messages from outlook.com.
