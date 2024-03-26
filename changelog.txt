@@ -3,6 +3,7 @@ Changelog for Header Tools Improved
 4.3
 Fixed failing full source warning dialog.
 Added French locale, thanks to DenB for the translation.
+Set maximum version to Thunderbird 126.*.
 
 4.2
 Switched to the WebExtension i18n locale system.
