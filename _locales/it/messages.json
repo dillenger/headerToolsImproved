@@ -18,10 +18,10 @@
         "message": "Header Tools Improved"
     },
     "fsBigMessage": {
-        "message": "Caricare il sorgente completo di questo messaggio potrebbe richiedere molto tempo.\\nSi vuole continuare?"
+        "message": "Caricare il sorgente completo di questo messaggio potrebbe richiedere molto tempo.\nSi vuole continuare?"
     },
     "fsWarning": {
-        "message": "ATTENZIONE: modificare il sorgente del messaggio solo se si è\\ntotalmente sicuri di quello che si sta facendo!"
+        "message": "ATTENZIONE: modificare il sorgente del messaggio solo se si è\ntotalmente sicuri di quello che si sta facendo!"
     },
     "fullSource": {
         "message": "Modificare sorgente del messaggio"

@@ -1,0 +1,93 @@
+{
+    "addHTLheader": {
+        "message": "Ajouter l’en-tête « X-HeaderToolsImproved »"
+    },
+    "author": {
+        "message": "De : "
+    },
+    "changeDetails": {
+        "message": "Modifier les en-têtes"
+    },
+    "date": {
+        "message": "Date : "
+    },
+    "dontShowAgain": {
+        "message": "Ne plus afficher"
+    },
+    "extName": {
+        "message": "Header Tools Improved"
+    },
+
+    "fsBigMessage": {
+        "message": "Le chargement de la source complète du message peut prendre du temps.\nSouhaitez-vous continuer ?"
+    },
+    "fsWarning": {
+        "message": "Attention, ne modifiez la source d’un message que si vous êtes \ntotalement sûr de ce que vous faites !"
+    },
+    "fullSource": {
+        "message": "Modifier la source complète"
+    },
+    "imapFix": {
+        "message": "Forcer les modifications pour les comptes IMAP"
+    },
+    "inreplyto": {
+        "message": "En réponse à : "
+    },
+    "mailCharset": {
+        "message": "Encodage du texte : "
+    },
+    "maxchars": {
+        "message": "Nombre maximum de caractères affichés à l’édition de la source : "
+    },
+    "mid": {
+        "message": "Identifiant du message : "
+    },
+    "misc": {
+        "message": "Divers"
+    },
+    "nolimit": {
+        "message": "(La valeur « -1 » signifie « sans limite ».)"
+    },
+    "percent": {
+        "message": "Chargé : §%"
+    },
+    "prefTitle": {
+        "message": "Header Tools Improved · Options"
+    },
+    "recipients": {
+        "message": "Pour : "
+    },
+    "refs": {
+        "message": "Références : "
+    },
+    "replyto": {
+        "message": "Répondre à : "
+    },
+    "saveRestart": {
+        "message": "Enregistrer et redémarrer"
+    },
+    "shortCut": {
+        "message": "Raccourci pour modifier les en-têtes :"
+    },
+    "shortCutFS": {
+        "message": "Raccourci pour modifier la source complète :"
+    },
+    "shortCutWarn": {
+        "message": "Thunderbird doit être redémarré pour appliquer un changement de raccourci."
+    },
+    "shortcuts": {
+        "message": "Raccourcis clavier"
+    },
+    "showComplete": {
+        "message": "Charger la source complète"
+    },
+    "subject": {
+        "message": "Sujet : "
+    },
+    "trashOption": {
+        "message": "Placer le message original dans la corbeille"
+    },
+    "wrongDate": {
+        "message": "Format de date incorrect !"
+    }
+}

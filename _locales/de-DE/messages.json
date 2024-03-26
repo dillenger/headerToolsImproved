@@ -18,7 +18,7 @@
         "message": "Header Tools Improved"
     },
     "fsBigMessage": {
-        "message": "Das Laden des kompletten Nachrichten-Quelltextes könnte sehr lantge dauern.\\nTrotzdem fortfahren?"
+        "message": "Das Laden des kompletten Nachrichten-Quelltextes könnte sehr lantge dauern.\nTrotzdem fortfahren?"
     },
     "fsWarning": {
         "message": "Warnung: Bearbeite den Nachrichten-Quelltext nur, wenn Du absolut sicher bist, was Du tust!"

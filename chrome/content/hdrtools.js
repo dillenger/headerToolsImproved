@@ -168,6 +168,8 @@ var HeaderToolsImpObj = {
 
   // start editing full source
   editFS: function() {
+    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     if (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning")) {
       var check = {value: false};
       Services.prompt.alertCheck(null,"Header Tools Improved", extension.localeData.localizeMessage("fsWarning"),extension.localeData.localizeMessage("dontShowAgain"), check);
