@@ -10,7 +10,6 @@ var HeaderToolsImpObj = {
   folder : null,
   hdr : null,
   prefs : Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
-  bundle : Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService).createBundle("chrome://hdrtoolsimproved/locale/hdrtools.properties"),
 
   // called loading dialog for changing headers details
   initDialog : function() {
