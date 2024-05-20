@@ -1,6 +1,12 @@
 Changelog for Header Tools Improved
 
-4.3
+4.5
+Fixed deleting original messages for Thunderbird 127.
+Replaced some deprecated code.
+Set minimum version to Thunderbird 115.0.
+Set maximum version to Thunderbird 128.*.
+
+4.4
 Fixed failing full source warning dialog.
 Added French locale, thanks to DenB for the translation.
 Set maximum version to Thunderbird 126.*.

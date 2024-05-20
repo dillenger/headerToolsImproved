@@ -468,9 +468,10 @@ var HeaderToolsImpObj = {
       var extService = Components.classes['@mozilla.org/uriloader/external-helper-app-service;1']
         .getService(Components.interfaces.nsPIExternalAppLauncher)
       extService.deleteTemporaryFileOnExit(fileSpec); // function's name says all!!!
-      HeaderToolsImpObj.noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
+      //HeaderToolsImpObj.noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
+      var noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
       // Moved in copyListener.onStopCopy
-      // HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,noTrash,true,null,false);
+      HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,noTrash,true,null,false);
       var cs = Components.classes["@mozilla.org/messenger/messagecopyservice;1"].getService(Components.interfaces.nsIMsgCopyService);
       var msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
       cs.copyFileMessage(fileSpec, fol, null, false, flags, keys, HeaderToolsImpObj.copyListener, msgWindow);
