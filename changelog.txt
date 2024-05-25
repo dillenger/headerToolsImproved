@@ -2,7 +2,6 @@ Changelog for Header Tools Improved
 
 4.5
 Fixed deleting original messages for Thunderbird 127.
-Replaced some deprecated code.
 Set minimum version to Thunderbird 115.0.
 Set maximum version to Thunderbird 128.*.
 
