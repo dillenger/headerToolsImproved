@@ -10,7 +10,9 @@
 
 #cnghdrs input {
   width: 100%;
-  margin: 2px 4px;
+  margin: 2px;
+  min-height: 2em;
+  padding-block: 2px;
 }
 
 .tleft {
@@ -21,8 +23,7 @@
 
 #date3 {
   min-width: 5em;
-  margin-block: 3px;
-  margin-inline: 4px 1px;
+  margin: 3px 2px;
 }
 
 #sourcePercent {
@@ -34,7 +35,7 @@
   height: 492px;
   min-height: 90%;
   overflow: auto;
-  margin: 0 5px 5px;
+  margin: 0px 5px 5px;
   font-family: monospace;
   font-size: medium;
 }
