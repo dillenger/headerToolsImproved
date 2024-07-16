@@ -13,7 +13,7 @@ var HeaderToolsImpObj = {
 
   // called loading dialog for changing headers details
   initDialog : function() {
-    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    var { ExtensionParent } = ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs");
     let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     i18n.updateDocument({extension});
     document.addEventListener("dialogaccept", function() {HeaderToolsImpObj.exitDialog(false)}); // This replaces ondialogaccept in XUL.
@@ -70,7 +70,7 @@ var HeaderToolsImpObj = {
 
   // called loading dialog for editing full source, that is in window.arguments[0].value
   initDialog2 : function() {
-    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    var { ExtensionParent } = ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs");
     let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     i18n.updateDocument({extension});
     document.addEventListener("dialogaccept", function() {HeaderToolsImpObj.exitDialog2(false)}); // This replaces ondialogaccept in XUL.
@@ -100,7 +100,7 @@ var HeaderToolsImpObj = {
   },
 
   showFullSource : function() {
-    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    var { ExtensionParent } = ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs");
     let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     if (confirm(extension.localeData.localizeMessage("fsBigMessage"))) {
       document.getElementById("editFSarea").setAttribute("limit", "-1");
@@ -167,7 +167,7 @@ var HeaderToolsImpObj = {
 
   // start editing full source
   editFS: function() {
-    var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+    var { ExtensionParent } = ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs");
     let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     if (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning")) {
       var check = {value: false};
@@ -276,7 +276,7 @@ var HeaderToolsImpObj = {
         newHdr.date = date;
         newHdr.replyto = HeaderToolsImpObj.hdr.getStringProperty("replyTo");
 
-        var { MsgUtils } = ChromeUtils.import("resource:///modules/MimeMessageUtils.jsm");
+        var { MsgUtils } = ChromeUtils.importESModule("resource:///modules/MimeMessageUtils.sys.mjs");
         var rawReferences = HeaderToolsImpObj.hdr.getStringProperty("references");
         references = MsgUtils.getReferences(rawReferences);
         newHdr.inreplyto = MsgUtils.getInReplyTo(rawReferences);
@@ -468,10 +468,9 @@ var HeaderToolsImpObj = {
       var extService = Components.classes['@mozilla.org/uriloader/external-helper-app-service;1']
         .getService(Components.interfaces.nsPIExternalAppLauncher)
       extService.deleteTemporaryFileOnExit(fileSpec); // function's name says all!!!
-      //HeaderToolsImpObj.noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
-      var noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
+      HeaderToolsImpObj.noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
       // Moved in copyListener.onStopCopy
-      HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,noTrash,true,null,false);
+      // HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,noTrash,true,null,false);
       var cs = Components.classes["@mozilla.org/messenger/messagecopyservice;1"].getService(Components.interfaces.nsIMsgCopyService);
       var msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
       cs.copyFileMessage(fileSpec, fol, null, false, flags, keys, HeaderToolsImpObj.copyListener, msgWindow);
@@ -495,14 +494,14 @@ var HeaderToolsImpObj = {
       throw Components.results.NS_NOINTERFACE;
       return 0;
     },
-    GetMessageId: function (messageId) {},
-    OnProgress: function (progress, progressMax) {},
-    OnStartCopy: function () {},
-    OnStopCopy: function (status) {
+    getMessageId: function (messageId) {},
+    onProgress: function (progress, progressMax) {},
+    onStartCopy: function () {},
+    onStopCopy: function (status) {
       if (status == 0) // copy done
         HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,HeaderToolsImpObj.noTrash,true,null,false);
     },
-    SetMessageKey: function (key) {
+    setMessageKey: function (key) {
       // at this point, the message is already stored in local folders, but not yet in remote folders,
       // so for remote folders we use a folderListener
       if (HeaderToolsImpObj.folder.server.type == "imap" || HeaderToolsImpObj.folder.server.type == "news") {

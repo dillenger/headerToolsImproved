@@ -1,5 +1,19 @@
 Changelog for Header Tools Improved
 
+4.8
+ESMified the add-on.
+Fixed deleting original messages for Thunderbird 126.
+Set minimum version to Thunderbird 126.0.
+Set maximum version to Thunderbird 129.*.
+
+4.7
+Fixed deleting original messages for Thunderbirds 115 through 125.
+Set maximum version to Thunderbird 125.*.
+
+4.6
+Tweaked the header details dialog.
+Set maximum version to Thunderbird 129.*.
+
 4.5
 Fixed deleting original messages for Thunderbird 127.
 Set minimum version to Thunderbird 115.0.

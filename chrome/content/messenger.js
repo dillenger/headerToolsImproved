@@ -1,5 +1,3 @@
-var Services = globalThis.Services || ChromeUtils.import("resource://gre/modules/Services.jsm").Services;
-
 Services.scriptloader.loadSubScript("chrome://hdrtoolsimproved/content/hdrtools.js", window, "UTF-8");
 Services.scriptloader.loadSubScript("chrome://hdrtoolsimproved/content/keysets.js", window, "UTF-8");
 

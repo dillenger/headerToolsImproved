@@ -1,6 +1,6 @@
-const { MailUtils } = ChromeUtils.import("resource:///modules/MailUtils.jsm");
+const { MailUtils } = ChromeUtils.importESModule("resource:///modules/MailUtils.sys.mjs");
 
-var { ExtensionParent } = ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+var { ExtensionParent } = ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs");
 let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
 
 function savePrefs() {

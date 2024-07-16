@@ -1,5 +1,3 @@
-const Services = globalThis.Services || ChromeUtils.import("resource://gre/modules/Services.jsm").Services;
-
 function migratePrefs() {
   if (Services.prefs.getBoolPref("extensions.hdrtoolsimproved.prefs_migrated") == true) {
     return;
