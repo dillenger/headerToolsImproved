@@ -1,5 +1,9 @@
 Changelog for Header Tools Improved
 
+4.9
+Set minimum version to Thunderbird 128.0.
+Set maximum version to Thunderbird 136.*.
+
 4.8
 ESMified the add-on.
 Fixed deleting original messages for Thunderbird 126.
