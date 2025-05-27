@@ -153,14 +153,16 @@ var HeaderToolsImpObj = {
   edit: function() {
     //var msguri = gFolderDisplay.selectedMessageUris[0];
     var gTabmail = Services.wm.getMostRecentBrowserWindow().gTabmail;
-    var msguri = gTabmail.currentAboutMessage.gMessageURI;
+    //var msguri = gTabmail.currentAboutMessage.gMessageURI;
+    var msguri = gTabmail.currentAbout3Pane.gDBView.URIForFirstSelectedMessage;
     //var mms = messenger.msgHdrFromURI(msguri).QueryInterface(Components.interfaces.nsIMsgDBHdr);
     var mms = MailServices.messageServiceFromURI(msguri);
     //HeaderToolsImpObj.hdr = mms.messageURIToMsgHdr(msguri);
     var messenger = Services.wm.getMostRecentBrowserWindow().messenger;
     HeaderToolsImpObj.hdr = messenger.msgHdrFromURI(msguri);
     //HeaderToolsImpObj.folder = HeaderToolsImpObj.hdr.folder;
-    HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
+    //HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
+    HeaderToolsImpObj.folder = gTabmail.currentAbout3Pane.gDBView.msgFolder;
     HeaderToolsImpObj.listener.fullSource = false;
     mms.streamMessage(msguri, HeaderToolsImpObj.listener, null, null, false, null);
   },
@@ -176,14 +178,16 @@ var HeaderToolsImpObj = {
     }
     //var msguri = gFolderDisplay.selectedMessageUris[0];
     var gTabmail = Services.wm.getMostRecentBrowserWindow().gTabmail;
-    var msguri = gTabmail.currentAboutMessage.gMessageURI;
+    //var msguri = gTabmail.currentAboutMessage.gMessageURI;
+    var msguri = gTabmail.currentAbout3Pane.gDBView.URIForFirstSelectedMessage;
     //var mms = messenger.msgHdrFromURI(msguri).QueryInterface(Components.interfaces.nsIMsgDBHdr);
     var mms = MailServices.messageServiceFromURI(msguri);
     //HeaderToolsImpObj.hdr = mms.messageURIToMsgHdr(msguri);
     var messenger = Services.wm.getMostRecentBrowserWindow().messenger;
     HeaderToolsImpObj.hdr = messenger.msgHdrFromURI(msguri);
     //HeaderToolsImpObj.folder = HeaderToolsImpObj.hdr.folder;
-    HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
+    //HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
+    HeaderToolsImpObj.folder = gTabmail.currentAbout3Pane.gDBView.msgFolder;
     HeaderToolsImpObj.listener.fullSource = true;
     mms.streamMessage(msguri, HeaderToolsImpObj.listener, null, null, false, null);
   },
