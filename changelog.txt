@@ -1,5 +1,9 @@
 Changelog for Header Tools Improved
 
+4.11
+Moved all inline styles to hdrtools.css.
+Set maximum version to Thunderbird 141.*.
+
 4.10
 Improved compatibility with the Thunderbird Conversations add-on.
 To edit a message it isn't necessary anymore to have it visible in the message pane.
