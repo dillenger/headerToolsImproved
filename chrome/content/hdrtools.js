@@ -329,7 +329,6 @@ var HeaderToolsImpObj = {
 
         // fix missing <brackets> for RSS authors
         if (headers.indexOf("\nContent-Base:") > -1) {
-          console.debug("RSS author fixed");
           newAuthEnc = "<"+newAuthEnc+">";
         }
 
@@ -387,8 +386,7 @@ var HeaderToolsImpObj = {
         }
 
         if (newHdr.inreplyto != MsgUtils.getInReplyTo(rawReferences)) {
-          newHdr.ref = newHdr.inreplyto;
-          console.debug("In-Reply-To: changed, copy In-Reply-To: to References:");
+          newHdr.ref = newHdr.inreplyto; // copy In-Reply-To: to References:
         }
 
         if (headers.indexOf("\nIn-Reply-To:") > -1)
@@ -407,7 +405,6 @@ var HeaderToolsImpObj = {
 
         if (newHdr.ref === "") { // header removed
           headers = headers.replace(/\nIn-Reply-To: *.*\r\n/, "\nIn-Reply-To: \r\n");
-          console.debug("References: removed, also remove In-Reply-To:");
         }
 
         // strips off characters added before the if-else_if-else series
