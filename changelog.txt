@@ -1,5 +1,11 @@
 Changelog for Header Tools Improved
 
+4.12
+Removed deprecated ESModules unloading from WindowListener.
+Fixed editing he message subject twice in a row not always working.
+Added Ci, Cu, Cr shorthands for Components.interfaces, Components.utils and Components.results.
+Set maximum version to Thunderbird 145.*.
+
 4.11
 Moved all inline styles to hdrtools.css.
 Set maximum version to Thunderbird 141.*.

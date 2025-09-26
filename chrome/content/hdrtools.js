@@ -9,7 +9,7 @@ var HeaderToolsImpObj = {
   // global variables
   folder : null,
   hdr : null,
-  prefs : Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
+  prefs : Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch),
 
   // called loading dialog for changing headers details
   initDialog : function() {
@@ -151,17 +151,11 @@ var HeaderToolsImpObj = {
 
   // start changing headers details
   edit: function() {
-    //var msguri = gFolderDisplay.selectedMessageUris[0];
     var gTabmail = Services.wm.getMostRecentBrowserWindow().gTabmail;
-    //var msguri = gTabmail.currentAboutMessage.gMessageURI;
     var msguri = gTabmail.currentAbout3Pane.gDBView.URIForFirstSelectedMessage;
-    //var mms = messenger.msgHdrFromURI(msguri).QueryInterface(Components.interfaces.nsIMsgDBHdr);
     var mms = MailServices.messageServiceFromURI(msguri);
-    //HeaderToolsImpObj.hdr = mms.messageURIToMsgHdr(msguri);
     var messenger = Services.wm.getMostRecentBrowserWindow().messenger;
     HeaderToolsImpObj.hdr = messenger.msgHdrFromURI(msguri);
-    //HeaderToolsImpObj.folder = HeaderToolsImpObj.hdr.folder;
-    //HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
     HeaderToolsImpObj.folder = gTabmail.currentAbout3Pane.gDBView.msgFolder;
     HeaderToolsImpObj.listener.fullSource = false;
     mms.streamMessage(msguri, HeaderToolsImpObj.listener, null, null, false, null);
@@ -173,20 +167,16 @@ var HeaderToolsImpObj = {
     let extension = ExtensionParent.GlobalManager.getExtension("hdrtoolslite@dillinger");
     if (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning")) {
       var check = {value: false};
-      Services.prompt.alertCheck(null,"Header Tools Improved", extension.localeData.localizeMessage("fsWarning"),extension.localeData.localizeMessage("dontShowAgain"), check);
+      Services.prompt.alertCheck(null, "Header Tools Improved",
+        extension.localeData.localizeMessage("fsWarning"),
+        extension.localeData.localizeMessage("dontShowAgain"), check);
       HeaderToolsImpObj.prefs.setBoolPref("extensions.hdrtoolsimproved.editFullSourceWarning", ! check.value);
     }
-    //var msguri = gFolderDisplay.selectedMessageUris[0];
     var gTabmail = Services.wm.getMostRecentBrowserWindow().gTabmail;
-    //var msguri = gTabmail.currentAboutMessage.gMessageURI;
     var msguri = gTabmail.currentAbout3Pane.gDBView.URIForFirstSelectedMessage;
-    //var mms = messenger.msgHdrFromURI(msguri).QueryInterface(Components.interfaces.nsIMsgDBHdr);
     var mms = MailServices.messageServiceFromURI(msguri);
-    //HeaderToolsImpObj.hdr = mms.messageURIToMsgHdr(msguri);
     var messenger = Services.wm.getMostRecentBrowserWindow().messenger;
     HeaderToolsImpObj.hdr = messenger.msgHdrFromURI(msguri);
-    //HeaderToolsImpObj.folder = HeaderToolsImpObj.hdr.folder;
-    //HeaderToolsImpObj.folder = gTabmail.currentAboutMessage.gMessage.folder;
     HeaderToolsImpObj.folder = gTabmail.currentAbout3Pane.gDBView.msgFolder;
     HeaderToolsImpObj.listener.fullSource = true;
     mms.streamMessage(msguri, HeaderToolsImpObj.listener, null, null, false, null);
@@ -207,13 +197,11 @@ var HeaderToolsImpObj = {
   // streamMessage listener
   listener : {
     QueryInterface : function(iid)  {
-                  if (iid.equals(Components.interfaces.nsIStreamListener) ||
-                      iid.equals(Components.interfaces.nsISupports))
-                   return this;
-
-                  throw Components.results.NS_NOINTERFACE;
-                  return 0;
-          },
+      if (iid.equals(Ci.nsIStreamListener) || iid.equals(Ci.nsISupports))
+        return this;
+      throw Cr.NS_NOINTERFACE;
+      return 0;
+    },
 
     onStartRequest : function (aRequest) {
       HeaderToolsImpObj.listener.text = "";
@@ -228,8 +216,8 @@ var HeaderToolsImpObj = {
       if (HeaderToolsImpObj.listener.fullSource) {
         // we're editing full source
         var textObj = {};
-        var converter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
-          .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+        var converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"]
+          .createInstance(Ci.nsIScriptableUnicodeConverter);
         var text = HeaderToolsImpObj.listener.text;
         if (HeaderToolsImpObj.hdr.Charset)
           converter.charset = HeaderToolsImpObj.hdr.Charset;
@@ -285,8 +273,8 @@ var HeaderToolsImpObj = {
         references = MsgUtils.getReferences(rawReferences);
         newHdr.inreplyto = MsgUtils.getInReplyTo(rawReferences);
 
-        var mimeConverter = Components.classes["@mozilla.org/messenger/mimeconverter;1"]
-          .getService(Components.interfaces.nsIMimeConverter);
+        var mimeConverter = Cc["@mozilla.org/messenger/mimeconverter;1"]
+          .getService(Ci.nsIMimeConverter);
         // decode UTF-8 encoded Reply-To headers before the dialog opens
         newHdr.replyto = mimeConverter.decodeMimeHeader(newHdr.replyto, "UTF-8", false, false);
 
@@ -436,13 +424,13 @@ var HeaderToolsImpObj = {
       }
 
       // creates the temporary file, where the modified message body will be stored
-      var tempFile = Components.classes["@mozilla.org/file/directory_service;1"].
-        getService(Components.interfaces.nsIProperties).
-        get("TmpD", Components.interfaces.nsIFile);
+      var tempFile = Cc["@mozilla.org/file/directory_service;1"].
+        getService(Ci.nsIProperties).
+        get("TmpD", Ci.nsIFile);
       tempFile.append("HT.eml");
       tempFile.createUnique(0,0o600);
-      var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
-        .createInstance(Components.interfaces.nsIFileOutputStream);
+      var foStream = Cc["@mozilla.org/network/file-output-stream;1"]
+        .createInstance(Ci.nsIFileOutputStream);
       foStream.init(tempFile, 2, 0x200, false); // open as "write only"
       foStream.write(data,data.length);
       foStream.close();
@@ -457,29 +445,27 @@ var HeaderToolsImpObj = {
       // the nsIFile has been already used by foStream (because of Windows lock system?), so we
       // must initialize another nsIFile object, pointing to the temporary file
       try {
-        var fileSpec = Components.classes["@mozilla.org/file/local;1"]
-          .createInstance(Components.interfaces.nsILocalFile);
+        var fileSpec = Cc["@mozilla.org/file/local;1"]
+          .createInstance(Ci.nsILocalFile);
       }
       catch(e) {
-        var fileSpec = Components.classes["@mozilla.org/file/local;1"]
-          .createInstance(Components.interfaces.nsIFile);
+        var fileSpec = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsIFile);
       }
       fileSpec.initWithPath(tempFile.path);
       var fol = HeaderToolsImpObj.hdr.folder;
-      var extService = Components.classes['@mozilla.org/uriloader/external-helper-app-service;1']
-        .getService(Components.interfaces.nsPIExternalAppLauncher)
+      var extService = Cc['@mozilla.org/uriloader/external-helper-app-service;1']
+        .getService(Ci.nsPIExternalAppLauncher)
       extService.deleteTemporaryFileOnExit(fileSpec); // function's name says all!!!
       HeaderToolsImpObj.noTrash = ! (HeaderToolsImpObj.prefs.getBoolPref("extensions.hdrtoolsimproved.putOriginalInTrash"))
       // Moved in copyListener.onStopCopy
       // HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,noTrash,true,null,false);
-      var cs = Components.classes["@mozilla.org/messenger/messagecopyservice;1"].getService(Components.interfaces.nsIMsgCopyService);
+      var cs = Cc["@mozilla.org/messenger/messagecopyservice;1"].getService(Ci.nsIMsgCopyService);
       var msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
       cs.copyFileMessage(fileSpec, fol, null, false, flags, keys, HeaderToolsImpObj.copyListener, msgWindow);
     },
 
     onDataAvailable : function (aRequest, aInputStream, aOffset, aCount) {
-      var scriptStream = Components.classes["@mozilla.org/scriptableinputstream;1"].
-            createInstance().QueryInterface(Components.interfaces.nsIScriptableInputStream);
+      var scriptStream = Cc["@mozilla.org/scriptableinputstream;1"].createInstance().QueryInterface(Ci.nsIScriptableInputStream);
       scriptStream.init(aInputStream);
       HeaderToolsImpObj.listener.text+=scriptStream.read(scriptStream.available());
      }
@@ -488,11 +474,9 @@ var HeaderToolsImpObj = {
   // copyFileMessage listener
   copyListener : {
     QueryInterface : function(iid) {
-      if (iid.equals(Components.interfaces.nsIMsgCopyServiceListener) ||
-      iid.equals(Components.interfaces.nsISupports))
-      return this;
-
-      throw Components.results.NS_NOINTERFACE;
+      if (iid.equals(Ci.nsIMsgCopyServiceListener) || iid.equals(Ci.nsISupports))
+        return this;
+      throw Cr.NS_NOINTERFACE;
       return 0;
     },
     getMessageId: function (messageId) {},
@@ -500,15 +484,15 @@ var HeaderToolsImpObj = {
     onStartCopy: function () {},
     onStopCopy: function (status) {
       if (status == 0) // copy done
-        HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,HeaderToolsImpObj.noTrash,true,null,false);
+        HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,HeaderToolsImpObj.noTrash,true,null,true);
     },
     setMessageKey: function (key) {
       // at this point, the message is already stored in local folders, but not yet in remote folders,
       // so for remote folders we use a folderListener
       if (HeaderToolsImpObj.folder.server.type == "imap" || HeaderToolsImpObj.folder.server.type == "news") {
-        Components.classes["@mozilla.org/messenger/services/session;1"]
-                  .getService(Components.interfaces.nsIMsgMailSession)
-                  .AddFolderListener(HeaderToolsImpObj.folderListener, Components.interfaces.nsIFolderListener.all);
+        Cc["@mozilla.org/messenger/services/session;1"]
+                  .getService(Ci.nsIMsgMailSession)
+                  .AddFolderListener(HeaderToolsImpObj.folderListener, Ci.nsIFolderListener.all);
         HeaderToolsImpObj.folderListener.key = key;
         HeaderToolsImpObj.folderListener.URI = HeaderToolsImpObj.folder.URI;
       }
@@ -522,7 +506,7 @@ var HeaderToolsImpObj = {
     var hdr = HeaderToolsImpObj.folder.GetMessageHeader(key);
     if (hdr.flags & 2)
       HeaderToolsImpObj.folder.addMessageDispositionState(hdr,0); //set replied if necessary
-          if (hdr.flags & 4096)
+    if (hdr.flags & 4096)
       HeaderToolsImpObj.folder.addMessageDispositionState(hdr,1); //set fowarded if necessary
   },
 
@@ -530,17 +514,17 @@ var HeaderToolsImpObj = {
   folderListener  : {
     OnItemAdded: function(parentItem, item, view) {
       try {
-        var hdr = item.QueryInterface(Components.interfaces.nsIMsgDBHdr);
+        var hdr = item.QueryInterface(Ci.nsIMsgDBHdr);
       }
       catch(e) {
-                 return;
+        return;
       }
       if (HeaderToolsImpObj.folderListener.key == hdr.messageKey && HeaderToolsImpObj.folderListener.URI == hdr.folder.URI) {
         HeaderToolsImpObj.postActions(HeaderToolsImpObj.folderListener.key);
         // we don't need anymore the folderListener
-         Components.classes["@mozilla.org/messenger/services/session;1"]
-                      .getService(Components.interfaces.nsIMsgMailSession)
-                      .RemoveFolderListener(HeaderToolsImpObj.folderListener);
+        Cc["@mozilla.org/messenger/services/session;1"]
+                  .getService(Ci.nsIMsgMailSession)
+                  .RemoveFolderListener(HeaderToolsImpObj.folderListener);
       }
     },
     OnItemRemoved: function(parentItem, item, view) {},
