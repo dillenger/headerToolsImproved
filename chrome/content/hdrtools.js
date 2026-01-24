@@ -462,13 +462,14 @@ var HeaderToolsImpObj = {
       var cs = Cc["@mozilla.org/messenger/messagecopyservice;1"].getService(Ci.nsIMsgCopyService);
       var msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
       cs.copyFileMessage(fileSpec, fol, null, false, flags, keys, HeaderToolsImpObj.copyListener, msgWindow);
+      HeaderToolsImpObj.folder.updateFolder(msgWindow);
     },
 
     onDataAvailable : function (aRequest, aInputStream, aOffset, aCount) {
       var scriptStream = Cc["@mozilla.org/scriptableinputstream;1"].createInstance().QueryInterface(Ci.nsIScriptableInputStream);
       scriptStream.init(aInputStream);
       HeaderToolsImpObj.listener.text+=scriptStream.read(scriptStream.available());
-     }
+    }
   },
 
   // copyFileMessage listener
