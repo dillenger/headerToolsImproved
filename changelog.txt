@@ -1,5 +1,9 @@
 Changelog for Header Tools Improved
 
+4.13
+Applied a better fix for editing the message subject twice in a row not always working.
+Set maximum version to Thunderbird 149.*.
+
 4.12
 Removed deprecated ESModules unloading from WindowListener.
 Fixed editing the message subject twice in a row not always working.

@@ -462,7 +462,7 @@ var HeaderToolsImpObj = {
       var cs = Cc["@mozilla.org/messenger/messagecopyservice;1"].getService(Ci.nsIMsgCopyService);
       var msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
       cs.copyFileMessage(fileSpec, fol, null, false, flags, keys, HeaderToolsImpObj.copyListener, msgWindow);
-      HeaderToolsImpObj.folder.updateFolder(msgWindow);
+      //HeaderToolsImpObj.folder.updateFolder(msgWindow);
     },
 
     onDataAvailable : function (aRequest, aInputStream, aOffset, aCount) {
@@ -485,7 +485,9 @@ var HeaderToolsImpObj = {
     onStartCopy: function () {},
     onStopCopy: function (status) {
       if (status == 0) // copy done
-        HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,HeaderToolsImpObj.noTrash,true,null,true);
+        HeaderToolsImpObj.folder.deleteMessages(HeaderToolsImpObj.list,null,HeaderToolsImpObj.noTrash,true,null,false);
+        const msgWindow = Services.wm.getMostRecentBrowserWindow().msgWindow;
+        HeaderToolsImpObj.folder.updateFolder(msgWindow);
     },
     setMessageKey: function (key) {
       // at this point, the message is already stored in local folders, but not yet in remote folders,
