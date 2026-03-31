@@ -1,12 +1,23 @@
 Changelog for Header Tools Improved
 
-4.13
-Applied a better fix for editing the message subject twice in a row not always working.
-Set maximum version to Thunderbird 149.*.
+5.0
+The add-on was almost completely converted to a pure WebExtension. The WindowListener
+Experiment API was removed and replaced by a standard WebExtension implementation.
+In order to migrate legacy preferences stored in the nsIPrefBranch, the extension
+still uses the LegacyPrefs Experiment API, which can be removed as soon as the
+majority of users has updated to this version.
+- dialogs are now HTML popups opened via browser.windows.create()
+- message modification now uses the browser.messages.import() API
+- context menu uses the browser.menus API
+- keyboard shortcuts now use the browser.commands API
+- preferences now use browser.storage.local
+
+The only removed functionality is the former behavior to keep the replied/forwarded
+status of the original message, as there is no WebExtension API for that (yet).
 
 4.12
 Removed deprecated ESModules unloading from WindowListener.
-Fixed editing the message subject twice in a row not always working.
+Fixed editing he message subject twice in a row not always working.
 Added Ci, Cu, Cr shorthands for Components.interfaces, Components.utils and Components.results.
 Set maximum version to Thunderbird 145.*.
 

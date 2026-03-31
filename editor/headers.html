@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n-content="extName"></title>
+    <link rel="stylesheet" href="chrome://messenger/skin/colors.css" />
+    <link rel="stylesheet" href="editor.css" />
+    <script type="module" src="headers.mjs"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="form-area">
+        <div class="form-row">
+          <label data-i18n-content="subject"></label>
+          <input id="subBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="date"></label>
+          <select id="date3">
+            <option value="" selected></option>
+            <option value="Mon">Mon</option>
+            <option value="Tue">Tue</option>
+            <option value="Wed">Wed</option>
+            <option value="Thu">Thu</option>
+            <option value="Fri">Fri</option>
+            <option value="Sat">Sat</option>
+            <option value="Sun">Sun</option>
+          </select>
+          <input id="dateBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="author"></label>
+          <input id="authBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="recipients"></label>
+          <input id="recBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="replyto"></label>
+          <input id="replytoBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="mid"></label>
+          <input id="midBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="inreplyto"></label>
+          <input id="inreplytoBox" type="text" />
+        </div>
+        <div class="form-row">
+          <label data-i18n-content="refs"></label>
+          <input id="refBox" type="text" />
+        </div>
+      </div>
+
+      <div class="button-bar">
+        <span id="busy-spinner">&#8987;</span>
+        <span id="status-ok" class="hidden">&#10003;</span>
+        <span id="status-err" class="hidden">&#10007;</span>
+        <button id="btn_save" data-i18n-content="save"></button>
+        <button id="btn_cancel" data-i18n-content="cancel"></button>
+      </div>
+    </div>
+  </body>
+</html>

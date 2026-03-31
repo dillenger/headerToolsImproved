@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n-content="prefTitle"></title>
+    <link rel="stylesheet" href="chrome://messenger/skin/colors.css" />
+    <link rel="stylesheet" href="options.css" />
+    <script type="module" src="options.mjs"></script>
+  </head>
+  <body>
+    <fieldset>
+      <legend data-i18n-content="misc"></legend>
+      <div class="hbox center">
+        <input
+          type="checkbox"
+          id="delOrig"
+          data-preference="putOriginalInTrash"
+        />
+        <label for="delOrig" data-i18n-content="trashOption"></label>
+      </div>
+      <div class="hbox center">
+        <input type="checkbox" id="imapFix" data-preference="use_imap_fix" />
+        <label for="imapFix" data-i18n-content="imapFix"></label>
+      </div>
+      <div class="hbox center">
+        <input
+          type="checkbox"
+          id="addHTLheader"
+          data-preference="add_htl_header"
+        />
+        <label for="addHTLheader" data-i18n-content="addHTLheader"></label>
+      </div>
+      <div class="hbox center" style="margin-top: 8px">
+        <label for="maxFSchars" data-i18n-content="maxchars"></label>
+        <input
+          type="number"
+          id="maxFSchars"
+          data-preference="fullsource_maxchars"
+          min="-1"
+          max="999999"
+          style="width: 8em"
+        />
+      </div>
+      <div class="hint" data-i18n-content="nolimit"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n-content="shortcuts"></legend>
+      <div class="hbox center">
+        <label id="shortcuts_message1"></label>
+      </div>
+      <div class="hbox center">
+        <label id="shortcuts_message2"></label>
+      </div>
+    </fieldset>
+
+    <div style="margin: 1ex">
+      <button id="btn_save" data-i18n-content="save"></button>
+      <button id="btn_cancel" data-i18n-content="cancel"></button>
+    </div>
+  </body>
+</html>

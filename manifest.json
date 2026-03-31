@@ -1,32 +1,52 @@
 {
   "manifest_version": 2,
-  "name": "Header Tools Improved",
+  "name": "__MSG_extName__",
   "description": "Allows to modify the header and the source of messages.",
-  "version": "4.13",
+  "version": "5.0",
   "author": "Dillinger",
   "homepage_url": "https://addons.thunderbird.net/en-US/thunderbird/addon/header-tools-improved/",
   "default_locale": "en-US",
   "experiment_apis": {
-    "WindowListener": {
-      "schema": "chrome/content/api/WindowListener/schema.json",
+    "LegacyPrefs": {
+      "schema": "api/LegacyPrefs/schema.json",
       "parent": {
         "scopes": ["addon_parent"],
-        "paths": [["WindowListener"]],
-        "script": "chrome/content/api/WindowListener/implementation.js"
+        "paths": [["LegacyPrefs"]],
+        "script": "api/LegacyPrefs/implementation.js"
       }
     }
   },
   "background": {
-    "scripts": ["background.js"]
+    "page": "background.html"
+  },
+  "options_ui": {
+    "page": "options/options.html"
+  },
+  "commands": {
+    "edit-headers": {
+      "description": "__MSG_shortCut__"
+    },
+    "edit-source": {
+      "description": "__MSG_shortCutFS__"
+    }
   },
   "browser_specific_settings": {
     "gecko": {
       "id": "hdrtoolslite@dillinger",
-      "strict_min_version": "128.0",
-      "strict_max_version": "149.*"
+      "strict_min_version": "140.0"
     }
   },
   "icons": {
     "32": "hdrtools32.png"
-  }
+  },
+  "permissions": [
+    "menus",
+    "messagesRead",
+    "messagesMove",
+    "messagesImport",
+    "messagesDelete",
+    "accountsRead",
+    "accountsFolders",
+    "storage"
+  ]
 }

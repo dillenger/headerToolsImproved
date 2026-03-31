@@ -1,0 +1,41 @@
+html,
+body {
+  color: light-dark(#111, #fff);
+  background-color: light-dark(#fff, #27272a);
+}
+
+body {
+  margin: 1em;
+}
+
+fieldset {
+  border: 1px solid light-dark(#dcdcdc, #525258);
+  border-top-width: 26px;
+  margin: 1ex 0;
+}
+
+fieldset legend {
+  color: light-dark(#111, #fff);
+  background: light-dark(#dcdcdc, #525258);
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.hbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.center {
+  align-items: center;
+}
+
+.hbox > * {
+  margin: 4px;
+}
+
+.hint {
+  margin: 2px 4px;
+  font-size: 0.9em;
+  opacity: 0.7;
+}

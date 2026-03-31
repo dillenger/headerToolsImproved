@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n-content="extName"></title>
+    <link rel="stylesheet" href="chrome://messenger/skin/colors.css" />
+    <link rel="stylesheet" href="editor.css" />
+    <script type="module" src="source.mjs"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="source-info">
+        <span data-i18n-content="mailCharset"></span>
+        <span id="charsetDisplay"></span>
+        <span style="flex: 1"></span>
+        <button
+          id="btn_showFull"
+          class="hidden"
+          data-i18n-content="showComplete"
+        ></button>
+        <span id="sourcePercent"></span>
+      </div>
+
+      <div id="source-area">
+        <textarea id="editFSarea"></textarea>
+      </div>
+
+      <div class="button-bar">
+        <span id="busy-spinner">&#8987;</span>
+        <span id="status-ok" class="hidden">&#10003;</span>
+        <span id="status-err" class="hidden">&#10007;</span>
+        <button id="btn_save" data-i18n-content="save"></button>
+        <button id="btn_cancel" data-i18n-content="cancel"></button>
+      </div>
+    </div>
+  </body>
+</html>

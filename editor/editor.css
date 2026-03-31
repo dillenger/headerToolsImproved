@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: light-dark(#111, #ddd);
+  background-color: light-dark(#eee, #222);
+  font-size: 14px;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Header editing form */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;;
+}
+
+.form-row label {
+  min-width: 8em;
+  text-align: left;
+  margin-right: 8px;
+  white-space: nowrap;
+  font: medium sans-serif;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  min-height: 1.8em;
+  padding: 2px 4px;
+  font: medium sans-serif;
+}
+
+.form-row select {
+  flex: none;
+  width: 5em;
+  margin-right: 4px;
+}
+
+/* Full source editor */
+#source-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#editFSarea {
+  flex: 1;
+  width: 100%;
+  font-family: monospace;
+  font-size: medium;
+  resize: none;
+  box-sizing: border-box;
+}
+
+#source-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+#sourcePercent {
+  font-weight: bold;
+}
+
+/* Button bar */
+.button-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.button-bar button {
+  appearance: auto;
+  min-width: 6em;
+  font: medium sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Busy overlay */
+#busy-spinner {
+  display: none;
+  margin-right: 8px;
+}
+
+#busy-spinner.active {
+  display: inline-block;
+}
