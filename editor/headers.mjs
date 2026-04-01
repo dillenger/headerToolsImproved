@@ -172,7 +172,6 @@ async function save() {
     setBusy(false);
     showStatus("err");
   }
-  window.close();
 }
 
 function replaceHeader(headers, name, value) {

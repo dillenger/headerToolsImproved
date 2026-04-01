@@ -88,7 +88,35 @@ async function init() {
     else if (command == "edit-source")
       await openEditor("/editor/source.html", info, tab);
   });
+
+  await applyShortcuts();
 }
+
+async function applyShortcuts() {
+  const { edit_shortcut, editFS_shortcut } = await browser.storage.local.get({
+    edit_shortcut: "",
+    editFS_shortcut: "",
+  });
+  if (edit_shortcut)
+    await browser.commands.update({
+      name: "edit-headers",
+      //shortcut: "Shift+" + edit_shortcut.toUpperCase(),
+    });
+  else await browser.commands.reset("edit-headers");
+
+  if (editFS_shortcut)
+    await browser.commands.update({
+      name: "edit-source",
+      //shortcut: "Shift+" + editFS_shortcut.toUpperCase(),
+    });
+  else await browser.commands.reset("edit-source");
+}
+
+// Re-apply shortcuts when the user changes them in the options
+browser.storage.onChanged.addListener((changes, area) => {
+  if (area == "local" && (changes.edit_shortcut || changes.editFS_shortcut))
+    applyShortcuts();
+});
 
 // Migrate preferences from the old nsIPrefBranch system to browser.storage.local.
 // Uses the LegacyPrefs experiment API to read old values, then clears them.
