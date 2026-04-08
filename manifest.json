@@ -14,6 +14,14 @@
         "paths": [["LegacyPrefs"]],
         "script": "api/LegacyPrefs/implementation.js"
       }
+    },
+    "HeaderTools": {
+      "schema": "api/HeaderTools/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["HeaderTools"]],
+        "script": "api/HeaderTools/implementation.js"
+      }
     }
   },
   "background": {
@@ -42,11 +50,7 @@
   "permissions": [
     "menus",
     "messagesRead",
-    "messagesMove",
-    "messagesImport",
-    "messagesDelete",
     "accountsRead",
-    "accountsFolders",
     "storage"
   ]
 }

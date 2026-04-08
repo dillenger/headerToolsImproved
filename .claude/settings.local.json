@@ -30,7 +30,11 @@
       "Bash(wget -q -O impl_check.js \"https://raw.githubusercontent.com/thunderbird/webext-support/546e95ea5ec29fca59635ef612f8e4516204a0b9/experiments/LegacyPrefs/implementation.js\")",
       "Bash(wget -q -O schema_check.json \"https://raw.githubusercontent.com/thunderbird/webext-support/546e95ea5ec29fca59635ef612f8e4516204a0b9/experiments/LegacyPrefs/schema.json\")",
       "Read(//home/john/Documents/GitHub/webext-annotated-schemas/schema-files/**)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(mkdir -p /tmp/legacy_addon)",
+      "Bash(rm -rf *)",
+      "Bash(unzip /Users/john/Downloads/header_tools_improved-4.13-tb.xpi)",
+      "Bash(unzip -o /Users/john/Downloads/header_tools_improved-4.13-tb.xpi)"
     ],
     "additionalDirectories": [
       "/home/john/Documents/GitHub/webext-support/modules/i18n",

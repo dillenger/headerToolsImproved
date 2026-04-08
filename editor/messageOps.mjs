@@ -70,94 +70,20 @@ export function getOrigDate(raw) {
   return "";
 }
 
-// Replace a message with a modified version. The new message is first imported
-// into a local Trash folder (needed because messages.import() does not work
-// reliably with IMAP), then moved to the original folder.
+// Replace a message with a modified version using the HeaderTools experiment
+// API, which calls nsIMsgCopyService.copyFileMessage() internally.
 export async function replaceMessage(messageId, newMsgFile) {
-  let origHeader = await messenger.messages.get(messageId);
+  // Convert File to binary string (Latin-1 preserves all byte values 1:1).
+  let buffer = await newMsgFile.arrayBuffer();
+  let rawData = new TextDecoder("latin1").decode(buffer);
 
-  // Find a local account Trash folder to use as staging area.
-  let localAccount = (await messenger.accounts.list(false)).find(
-    (a) => a.type == "none",
-  );
-  if (!localAccount)
-    throw new Error("No local account found for message staging");
-
-  let localFolders = await messenger.folders.getSubFolders(localAccount, false);
-  let trashFolder =
-    localFolders.find((f) => f.type == "trash") ||
-    localFolders.find((f) => f.name == "Trash");
-  if (!trashFolder)
-    trashFolder = await messenger.folders.create(localAccount, "Trash");
-
-  // If the Trash already contains a message with the same Message-ID (from a
-  // previous edit), delete it first, as messages.import() rejects duplicates.
-  let dupes = await messenger.messages.query({
-    folder: trashFolder,
-    headerMessageId: origHeader.headerMessageId,
-  });
-  if (dupes.messages.length > 0)
-    await messenger.messages.delete(
-      dupes.messages.map((m) => m.id),
-      true,
-    );
-
-  let newHeader = await messenger.messages.import(newMsgFile, trashFolder, {
-    flagged: origHeader.flagged,
-    read: origHeader.read,
-    tags: origHeader.tags,
-  });
-
-  if (!newHeader) return false;
-
-  // If the message already lives in the local Trash, no move needed.
-  let destFolder = origHeader.folder;
-  let finalHeader;
-
-  if (
-    trashFolder.accountId == destFolder.accountId &&
-    trashFolder.path == destFolder.path
-  ) {
-    finalHeader = newHeader;
-  } else {
-    // Move new message from local Trash to the original folder and poll
-    // until it shows up there.
-    finalHeader = await new Promise((resolve, reject) => {
-      let attempts = 0;
-      let checkFolder = async () => {
-        let page = await messenger.messages.query({
-          folder: destFolder,
-          headerMessageId: newHeader.headerMessageId,
-        });
-        do {
-          for (let msg of page.messages) {
-            if (
-              msg.headerMessageId == newHeader.headerMessageId &&
-              msg.id != origHeader.id
-            ) {
-              resolve(msg);
-              return;
-            }
-          }
-          if (page.id) page = await messenger.messages.continueList(page.id);
-          else page = null;
-        } while (page && page.messages.length > 0);
-
-        if (++attempts > 20)
-          reject(new Error("Message not found in destination after move"));
-        else window.setTimeout(checkFolder, 500);
-      };
-      messenger.messages.move([newHeader.id], destFolder);
-      checkFolder();
-    });
-  }
-
-  if (!finalHeader) return false;
-
-  // Delete the original message. Without deletePermanently, the message
-  // is moved to the account's own Trash folder.
   let deletePermanently = !(await getPref("putOriginalInTrash"));
-  await messenger.messages.delete([origHeader.id], { deletePermanently });
+  let result = await messenger.HeaderTools.replaceMessage(
+    messageId,
+    rawData,
+    { deletePermanently },
+  );
 
-  return finalHeader;
+  if (!result) return false;
+  return messenger.messages.get(result.messageId);
 }
