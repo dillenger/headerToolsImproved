@@ -1,0 +1,37 @@
+[
+  {
+    "namespace": "HeaderTools",
+    "functions": [
+      {
+        "name": "replaceMessage",
+        "type": "function",
+        "async": true,
+        "description": "Replace a message with modified raw content, preserving flags and keywords. Uses nsIMsgCopyService.copyFileMessage() internally.",
+        "parameters": [
+          {
+            "name": "messageId",
+            "type": "integer",
+            "description": "The WebExtension message ID of the original message to replace."
+          },
+          {
+            "name": "rawData",
+            "type": "string",
+            "description": "The full RFC2822 raw message content as a binary (Latin-1) string."
+          },
+          {
+            "name": "options",
+            "type": "object",
+            "optional": true,
+            "properties": {
+              "deletePermanently": {
+                "type": "boolean",
+                "optional": true,
+                "description": "If true, the original is deleted permanently. If false, it is moved to Trash."
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
