@@ -92,9 +92,9 @@ async function save() {
     const newRecEnc = await encodeHeader("To", newRecipients);
     const newReplyToEnc = await encodeHeader("Reply-To", newReplyTo);
 
-    let headerText = cleanCRLF(rawText);
-    const endHeaders = headerText.search(/\r\n\r\n/);
-    let headers = headerText.substring(0, endHeaders);
+    const endHeaders = rawText.search(/\r\n\r\n/);
+    let headers = rawText.substring(0, endHeaders);
+    headers = cleanCRLF(headers);
 
     // Unfold multi-line headers if necessary
     for (let name of ["Subject", "From", "To", "Reply-To"]) {
@@ -118,6 +118,9 @@ async function save() {
     headers = replaceMessageId(headers, newMid);
     headers = replaceHeader(headers, "In-Reply-To", newInReplyTo);
     headers = replaceHeader(headers, "References", newRef);
+
+    // Remove X-Mozilla headers, to avoid duplicates, they will be regenerated
+    headers = headers.replace(/X-Mozilla-.+\r\n/g, "");
 
     if (newRef === "")
       // references removed
