@@ -150,10 +150,10 @@ async function save() {
       document.getElementById("editFSarea").value = fullRawSource;
       charLimit = -1;
       document.getElementById("btn_showFull").classList.add("hidden");
-      window.close();
     } else {
       showStatus("err");
     }
+    window.close();
   } catch (e) {
     console.error("Header Tools Improved - save error:", e);
     setBusy(false);

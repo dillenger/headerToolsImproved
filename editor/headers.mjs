@@ -167,10 +167,10 @@ async function save() {
       origDate = getOrigDate(rawText);
       const full = await messenger.messages.getFull(messageId);
       origInReplyTo = full.headers?.["in-reply-to"]?.[0] || "";
-      window.close();
     } else {
       showStatus("err");
     }
+    window.close();
   } catch (e) {
     console.error("Header Tools Improved - save error:", e);
     setBusy(false);
