@@ -294,9 +294,14 @@ var HeaderToolsImpObj = {
 
         // encodes the headers in UTF-8. I couldn't use message charset, because sometimes it's null
         var newSubEnc = mimeConverter.encodeMimePartIIStr_UTF8(newHdr.subject, false, "UTF-8", 0, 72);
+        // the following fields shouldn't have embedded carriage returns & newlines
+        newSubEnc = newSubEnc.replace(/\r\n/g, "");
         var newAuthEnc = mimeConverter.encodeMimePartIIStr_UTF8(newHdr.author, true, "UTF-8", 0, 72);
+        newAuthEnc = newAuthEnc.replace(/\r\n/g, "");
         var newRecEnc = mimeConverter.encodeMimePartIIStr_UTF8(newHdr.recipients, true, "UTF-8", 0, 72);
+        newRecEnc = newRecEnc.replace(/\r\n/g, "");
         var newReplytoEnc = mimeConverter.encodeMimePartIIStr_UTF8(newHdr.replyto, true, "UTF-8", 0, 72);
+        newReplytoEnc = newReplytoEnc.replace(/\r\n/g, "");
 
         var data = HeaderToolsImpObj.cleanCRLF(HeaderToolsImpObj.listener.text);
         var endHeaders = data.search(/\r\n\r\n/);
