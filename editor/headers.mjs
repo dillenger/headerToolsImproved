@@ -68,6 +68,11 @@ async function init() {
   document.getElementById("refBox").value = h.references?.[0] || "";
 }
 
+function detectCharset(raw) {
+  const match = raw.match(/charset=["']?([^\s;"']+)/i);
+  return match ? match[1].replace(/["']/g, "") : "UTF-8";
+}
+
 async function save() {
   setBusy(true);
   try {
@@ -151,7 +156,9 @@ async function save() {
       { type: "message/rfc822" },
     );
 
-    const result = await replaceMessage(messageId, newFile);
+    const charset = detectCharset(rawText);
+    //const result = await replaceMessage(messageId, newFile);
+    const result = await replaceMessage(messageId, newFile, charset);
     setBusy(false);
     if (result) {
       try {

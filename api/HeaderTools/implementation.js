@@ -58,8 +58,6 @@ var HeaderTools = class extends ExtensionCommon.ExtensionAPI {
 
           // 5. Copy the modified message into the folder and handle
           //    deletion of the original, all wrapped in a Promise.
-          // 5. Copy the modified message into the folder and handle
-          //    deletion of the original, all wrapped in a Promise.
           return new Promise((resolve, reject) => {
             let newMessageKey = null;
             let copyDone = false;

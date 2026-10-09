@@ -133,7 +133,9 @@ async function save() {
     const newFile = new File([data], crypto.randomUUID() + ".eml", {
       type: "message/rfc822",
     });
-    const result = await replaceMessage(messageId, newFile);
+    const charset = detectCharset(fullRawSource);
+    //const result = await replaceMessage(messageId, newFile);
+    const result = await replaceMessage(messageId, newFile, charset);
     setBusy(false);
     if (result) {
       try {

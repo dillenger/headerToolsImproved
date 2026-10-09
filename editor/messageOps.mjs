@@ -72,10 +72,13 @@ export function getOrigDate(raw) {
 
 // Replace a message with a modified version using the HeaderTools experiment
 // API, which calls nsIMsgCopyService.copyFileMessage() internally.
-export async function replaceMessage(messageId, newMsgFile) {
+//export async function replaceMessage(messageId, newMsgFile) {
+export async function replaceMessage(messageId, newMsgFile, charset) {
   // Convert File to binary string (Latin-1 preserves all byte values 1:1).
   let buffer = await newMsgFile.arrayBuffer();
   let rawData = new TextDecoder("latin1").decode(buffer);
+  //let rawData = new TextDecoder(charset).decode(buffer);
+  console.debug("detected character set:",charset);
 
   let deletePermanently = !(await getPref("putOriginalInTrash"));
   let result = await messenger.HeaderTools.replaceMessage(
