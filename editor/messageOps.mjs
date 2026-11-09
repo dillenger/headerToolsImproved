@@ -75,9 +75,12 @@ export function getOrigDate(raw) {
 //export async function replaceMessage(messageId, newMsgFile) {
 export async function replaceMessage(messageId, newMsgFile, charset) {
   // Convert File to binary string (Latin-1 preserves all byte values 1:1).
+  console.debug("newMsgFile",newMsgFile);
   let buffer = await newMsgFile.arrayBuffer();
   let rawData = new TextDecoder("latin1").decode(buffer);
   //let rawData = new TextDecoder(charset).decode(buffer);
+  //let rawData = await newMsgFile.text();
+  console.debug("rawData",rawData);
   console.debug("detected character set:",charset);
 
   let deletePermanently = !(await getPref("putOriginalInTrash"));
@@ -86,6 +89,7 @@ export async function replaceMessage(messageId, newMsgFile, charset) {
     rawData,
     { deletePermanently },
   );
+  console.debug("result",result);
 
   if (!result) return false;
   return messenger.messages.get(result.messageId);

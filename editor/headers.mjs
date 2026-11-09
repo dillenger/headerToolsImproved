@@ -149,14 +149,22 @@ async function save() {
     // Build the new message: modified headers (ASCII) + original body bytes.
     // Since RFC2822 headers are 7-bit ASCII, the byte offset in the raw file
     // matches the character offset from .text().
-    const bodyBlob = rawFile.slice(endHeaders);
+    let bodyBlob = rawFile.slice(endHeaders);
+    const charset = detectCharset(rawText);
+
+    console.debug("raw",bodyBlob);
+    let bodyBlob2 = await bodyBlob.text();
+    console.debug("text",bodyBlob2);
+    letbbodyBlob3 = new TextEncoder(charset).encode(bodyBlob2);
+    console.debug("encoded",bodyBlob3);
+
     const newFile = new File(
       [headers, bodyBlob],
       crypto.randomUUID() + ".eml",
       { type: "message/rfc822" },
     );
+  console.debug("newFile",newFile);
 
-    const charset = detectCharset(rawText);
     //const result = await replaceMessage(messageId, newFile);
     const result = await replaceMessage(messageId, newFile, charset);
     setBusy(false);

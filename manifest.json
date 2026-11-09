@@ -42,7 +42,7 @@
     "gecko": {
       "id": "hdrtoolslite@dillinger",
       "strict_min_version": "153.0",
-      "strict_max_version": "160.*"
+      "strict_max_version": "162.*"
     }
   },
   "icons": {
